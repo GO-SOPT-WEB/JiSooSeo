@@ -75,7 +75,9 @@ main{
 /* 카드섹션 */
 .card__section{
     display: flex;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    margin-top: 0.5rem;
 }
 
 .card{
@@ -86,6 +88,7 @@ main{
 
     width: 14rem;
     height: 20rem;
+    margin: 0.5rem;
 
     border: 0.1rem solid rgb(61, 139, 179);
     border-radius: 1rem;
