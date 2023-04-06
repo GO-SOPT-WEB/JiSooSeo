@@ -3,6 +3,8 @@
 
 /* 전체 */
 body{
+    background-color: whitesmoke;
+
     font-family: 'Poor Story', cursive;
 }
 
@@ -30,9 +32,15 @@ body{
     width: 2rem;
 }
 
+/* 메인 */
+main{
+    display: flex;
+}
+
 /* 네브 */
 .nav{
     width: 10rem;
+    height: 13.5rem;
     margin: 1rem 0 0 1rem;
     padding: 1rem;
 
@@ -64,4 +72,4 @@ body{
     background-color: whitesmoke;
 }
 
-/* 카드 */
+/* 카드섹션 */
