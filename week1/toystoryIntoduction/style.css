@@ -169,3 +169,54 @@ main{
     color:  rgb(255, 171, 193);
     cursor: pointer;
 }
+
+/* 메뉴바 */
+.menu__bar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+    position: absolute;
+    z-index: 2;
+    right: 0;
+    top:0;
+    padding-top: 3rem;
+
+    width: 20rem;
+    height: 100vh;
+
+    background-color: white;
+}
+
+.menu__bar__title{
+    width: 13rem;
+
+    margin-bottom: 3rem;
+
+    font-size: 2rem;
+}
+
+.menu__bar__title:hover{
+    color: rgb(61, 139, 179);
+    cursor: pointer;
+}
+
+.menu__bar__column{
+    width: 13rem;
+
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+
+    font-size: 1.5rem;
+    border-bottom: 0.1rem solid gray;
+}
+
+.menu__bar__column:hover{
+    color: rgb(61, 139, 179);
+    cursor: pointer;
+}
+
+.header__icon:hover > .menu__bar{
+    display: flex;
+}
