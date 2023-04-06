@@ -152,4 +152,10 @@ main{
     margin-left: 9rem;
 
     font-size: 1.5rem;
+    color: black;
+}
+
+.card__icon--like:hover{
+    color: rgb(61, 139, 179);
+    cursor: pointer;
 }
