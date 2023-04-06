@@ -72,6 +72,11 @@ main{
     background-color: whitesmoke;
 }
 
+.nav__tag:hover{
+    background-color: rgb(255, 171, 193);
+    cursor: pointer;
+}
+
 /* 카드섹션 */
 .card__section{
     display: flex;
@@ -145,7 +150,7 @@ main{
 }
 
 .card__tag--plus--tag:hover{
-    background-color: rgb(255, 115, 152);
+    background-color: rgb(255, 171, 193);
     cursor: pointer;
 }
 
@@ -161,6 +166,6 @@ main{
 }
 
 .card__icon--like:hover{
-    color:  rgb(255, 115, 152);
+    color:  rgb(255, 171, 193);
     cursor: pointer;
 }
