@@ -1,2 +1,26 @@
 @import "reset.css";
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    padding: 2rem;
+
+    background-color: rgb(61, 139, 179);
+}
+
+.header__title{
+    font-family: 'Poor Story', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+
+    color: whitesmoke;
+}
+
+.header__icon{
+    width: 2rem;
+}
