@@ -227,3 +227,10 @@ main{
 .header__icon:hover ~ .card__section{
     z-index: -1;
 }
+
+
+@media (max-width:750px){ 
+    .card{
+        width: 20rem;
+    }
+}
