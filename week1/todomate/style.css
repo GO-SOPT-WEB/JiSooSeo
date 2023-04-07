@@ -1,2 +1,26 @@
 @import "reset.css";
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+/* 전체 */
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: pink;
+    font-family: 'Poor Story', cursive;
+}
+
+.mobile{
+    width: 30rem;
+    border: 0.1rem solid red;
+}
+
+/* 헤더 */
+.header{
+    display: flex;
+    justify-content: center;
+
+    font-size: 2.5rem;
+    font-weight: 900;
+}
