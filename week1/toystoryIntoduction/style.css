@@ -141,6 +141,7 @@ main{
     height: 1.2rem;
 
     position: absolute;
+   
     margin:-10.5rem 0 0 11rem;
 
     border-radius: 3rem;
@@ -172,13 +173,15 @@ main{
 
 /* 메뉴바 */
 .menu__bar{
-    display: flex;
+    display:none;
     flex-direction: column;
     align-items: center;
 
 
     position: absolute;
     z-index: 2;
+    z-index: 5;
+
     right: 0;
     top:0;
     padding-top: 3rem;
@@ -187,6 +190,10 @@ main{
     height: 100vh;
 
     background-color: white;
+}
+
+.menu__bar:hover{
+    display: flex;
 }
 
 .menu__bar__title{
@@ -217,6 +224,10 @@ main{
     cursor: pointer;
 }
 
-.header__icon:hover > .menu__bar{
+.header__icon:hover + .menu__bar{
     display: flex;
 }
+/* 
+main ~.menu__bar{
+    display: none;
+} */
