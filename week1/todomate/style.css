@@ -75,3 +75,44 @@ main{
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+/* 투두리스트 */
+.lists{
+    display: grid;
+}
+
+.list{
+
+}
+
+.list__header{
+    display: flex;
+    justify-content: space-between;
+
+    padding: 0.5rem;
+
+    border:0.1rem solid skyblue;
+    border-radius: 3rem;
+    background-color: aliceblue;
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem skyblue;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.list__header--add{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1rem;
+    height: 1rem;
+
+    border-radius: 50%;
+
+    background-color: rgb(255, 106, 131);
+}
+
+.list__text{
+    margin: 0.3rem 0;
+}
