@@ -136,7 +136,29 @@ body{
 .footer{
     display: flex;
     justify-content: center;
-    align-items: center;
 
     height: 5rem;
+}
+
+.footer__button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 4rem;
+    height: 4rem;
+    margin: 0 0.5rem;
+
+
+    border: 0.1rem solid rgb(255, 152, 169);
+    border-radius: 1rem;
+
+    font-family: 'Poor Story', cursive;
+    color: #ff6a83;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    background-color: rgb(253, 223, 228);
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(255, 152, 169);
 }
