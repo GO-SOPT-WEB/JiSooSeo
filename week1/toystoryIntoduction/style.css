@@ -140,9 +140,7 @@ main{
     width: 1.2rem;
     height: 1.2rem;
 
-    position: absolute;
-   
-    margin:-10.5rem 0 0 11rem;
+    margin: -2.7rem 0 0 11.5rem;
 
     border-radius: 3rem;
     background-color: rgb(61, 139, 179);
@@ -179,8 +177,6 @@ main{
 
 
     position: absolute;
-    z-index: 2;
-    z-index: 5;
 
     right: 0;
     top:0;
@@ -227,7 +223,7 @@ main{
 .header__icon:hover + .menu__bar{
     display: flex;
 }
-/* 
-main ~.menu__bar{
-    display: none;
-} */
+
+.header__icon:hover ~ .card__section{
+    z-index: -1;
+}
