@@ -180,8 +180,10 @@ body{
     background-color: rgb(255, 106, 131);
 }
 
-.list__text{
-    margin: 0.3rem 0;
+.list__column{
+    display: flex;
+
+    margin: 0.4rem 0;
 }
 
 /* 푸터 */
@@ -213,4 +215,10 @@ body{
 
     background-color: rgb(253, 223, 228);
     box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(255, 152, 169);
+}
+
+/* 체크박스 */
+[type=checkbox]:checked + .list__column__text{
+    color:#777777;
+    text-decoration-line: line-through;
 }
