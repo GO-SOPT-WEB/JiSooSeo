@@ -7,26 +7,29 @@ body{
     flex-direction: column;
     align-items: center;
 
-    background-color: pink;
+
     font-family: 'Poor Story', cursive;
 }
 
 .mobile{
     width: 30rem;
     border: 0.1rem solid red;
+    background-color: pink;
 }
 
 /* 헤더 */
 .header{
     display: flex;
     justify-content: center;
+    align-items: center;
 
+    height: 4rem;
     font-size: 2.5rem;
     font-weight: 900;
 }
 
 /* 메인 */
-main{
+.main{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -127,4 +130,13 @@ main{
 
 .list__text{
     margin: 0.3rem 0;
+}
+
+/* 푸터 */
+.footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 5rem;
 }
