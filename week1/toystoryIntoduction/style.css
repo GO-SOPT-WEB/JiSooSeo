@@ -233,6 +233,11 @@ main{
     .card{
         width: 20rem;
     }
+
+    .card__section{
+        display: flex;
+        justify-content: center;
+    }
 }
 
 /* 푸터 */
