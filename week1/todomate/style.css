@@ -13,7 +13,7 @@ body{
 
 .mobile{
     width: 30rem;
-    border: 0.1rem solid red;
+
     background-color: pink;
 }
 
@@ -95,7 +95,7 @@ body{
     flex-wrap: wrap;
 
     width: 24rem;
-    height: 27rem;
+    height: 28rem;
 
     overflow: scroll;
 }
@@ -191,7 +191,7 @@ body{
     display: flex;
     justify-content: center;
 
-    height: 5rem;
+    height: 4.5rem;
 }
 
 .footer__button{
