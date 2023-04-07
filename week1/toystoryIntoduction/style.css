@@ -234,3 +234,12 @@ main{
         width: 20rem;
     }
 }
+
+/* 푸터 */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height:3rem;
+}
