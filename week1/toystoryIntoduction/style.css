@@ -248,3 +248,7 @@ footer{
 
     height:3rem;
 }
+
+.card__tag::before {
+    content: "#";
+  }
