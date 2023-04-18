@@ -1,138 +1,142 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module">
+      import { data } from './cards.js';
+      console.log(data.cards[0].name);
+    </script>
     <title>토이스토리 장난감가게</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <h1 class="header__title">🧸 토이스토리 장난감가게 🧸</h1>
-        <i>
-            <img src="assets//icon/ci_hamburger-md.svg" alt="햄버거 메뉴 아이콘" class="header__icon"/>
-            <aside class="menu__bar">
-                <h1 class="menu__bar__title">메뉴</h1>
-                <p class="menu__bar__column">새 상품 추가</p>
-                <p class="menu__bar__column">찜 목록</p>
-            </aside>
-        </i>
+      <h1 class="header__title">🧸 토이스토리 장난감가게 🧸</h1>
+      <i>
+        <img src="assets//icon/ci_hamburger-md.svg" alt="햄버거 메뉴 아이콘" class="header__icon" />
+        <aside class="menu__bar">
+          <h1 class="menu__bar__title">메뉴</h1>
+          <p class="menu__bar__column">새 상품 추가</p>
+          <p class="menu__bar__column">찜 목록</p>
+        </aside>
+      </i>
     </header>
 
     <main>
-        <nav class="nav">
-            <header class="nav__header">종류</header>
-            <ul>
-                <li class="nav__tag"><input type="checkbox"/>전체 🎬</li>
-                <li class="nav__tag"><input type="checkbox"/>주인공 🤹‍♀️</li>
-                <li class="nav__tag"><input type="checkbox"/>악인 🎪</li>
-                <li class="nav__tag"><input type="checkbox"/>뉴페이스 🎼</li>
-            </ul>
-        </nav>
-    
-        <section class="card__section">
-            <article class="card">
-                <header class="card__title">우디</header>
-                <ul class="card__tags">
-                    <li class="card__tag">카우보이</li>
-                    <li class="card__tag">우디_프라이드</li>
-                    <li class="card__tag">두손_번쩍_들어!</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/woody.png" alt="토이스토리 우디" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">버즈</header>
-                <ul class="card__tags">
-                    <li class="card__tag">버즈_라이트이어</li>
-                    <li class="card__tag">우주비행사</li>
-                    <li class="card__tag">무한한공간_저_너머로</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/buz.png" alt="토이스토리 버즈" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">제시</header>
-                <ul class="card__tags">
-                    <li class="card__tag">카우걸</li>
-                    <li class="card__tag">버즈여친</li>
-                    <li class="card__tag">사이드킥</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/jessie.png" alt="토이스토리 제시" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">보핍</header>
-                <ul class="card__tags">
-                    <li class="card__tag">양치기_아가씨</li>
-                    <li class="card__tag">양</li>
-                    <li class="card__tag">조명등</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/bopeep.png" alt="토이스토리 보핍" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">랏소</header>
-                <ul class="card__tags">
-                    <li class="card__tag">나쁜놈</li>
-                    <li class="card__tag">핑크_딸기곰</li>
-                    <li class="card__tag">케어베어</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/lotso.png" alt="토이스토리 랏소" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">햄</header>
-                <ul class="card__tags">
-                    <li class="card__tag">돼지</li>
-                    <li class="card__tag">저금통</li>
-                    <li class="card__tag">꿀꿀</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/hamm.png" alt="토이스토리 햄" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">포테이토 부부</header>
-                <ul class="card__tags">
-                    <li class="card__tag">미스터_포테토</li>
-                    <li class="card__tag">미스_포테토</li>
-                    <li class="card__tag">감자</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/potato.png" alt="토이스토리 포테이토 부부" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">알린</header>
-                <ul class="card__tags">
-                    <li class="card__tag">외계인</li>
-                    <li class="card__tag">하~이</li>
-                    <li class="card__tag">트리오</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/alien.png" alt="토이스토리 알린" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-            <article class="card">
-                <header class="card__title">포키</header>
-                <ul class="card__tags">
-                    <li class="card__tag">포크</li>
-                    <li class="card__tag">눈물</li>
-                    <li class="card__tag">핸드</li>
-                </ul>
-                <i class="card__tag--plus--tag">+</i>
-                <img src="assets/image/forky.png" alt="토이스토리 포키" class="card__img"/>
-                <i class="card__icon--like">♥︎</i>
-            </article>
-        </section>
+      <nav class="nav">
+        <header class="nav__header">종류</header>
+        <ul>
+          <li class="nav__tag"><input type="checkbox" />전체 🎬</li>
+          <li class="nav__tag"><input type="checkbox" />주인공 🤹‍♀️</li>
+          <li class="nav__tag"><input type="checkbox" />악인 🎪</li>
+          <li class="nav__tag"><input type="checkbox" />뉴페이스 🎼</li>
+        </ul>
+      </nav>
+
+      <section class="card__section">
+        <article class="card">
+          <header class="card__title">우디</header>
+          <ul class="card__tags">
+            <li class="card__tag">카우보이</li>
+            <li class="card__tag">우디_프라이드</li>
+            <li class="card__tag">두손_번쩍_들어!</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/woody.png" alt="토이스토리 우디" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">버즈</header>
+          <ul class="card__tags">
+            <li class="card__tag">버즈_라이트이어</li>
+            <li class="card__tag">우주비행사</li>
+            <li class="card__tag">무한한공간_저_너머로</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/buz.png" alt="토이스토리 버즈" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">제시</header>
+          <ul class="card__tags">
+            <li class="card__tag">카우걸</li>
+            <li class="card__tag">버즈여친</li>
+            <li class="card__tag">사이드킥</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/jessie.png" alt="토이스토리 제시" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">보핍</header>
+          <ul class="card__tags">
+            <li class="card__tag">양치기_아가씨</li>
+            <li class="card__tag">양</li>
+            <li class="card__tag">조명등</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/bopeep.png" alt="토이스토리 보핍" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">랏소</header>
+          <ul class="card__tags">
+            <li class="card__tag">나쁜놈</li>
+            <li class="card__tag">핑크_딸기곰</li>
+            <li class="card__tag">케어베어</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/lotso.png" alt="토이스토리 랏소" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">햄</header>
+          <ul class="card__tags">
+            <li class="card__tag">돼지</li>
+            <li class="card__tag">저금통</li>
+            <li class="card__tag">꿀꿀</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/hamm.png" alt="토이스토리 햄" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">포테이토 부부</header>
+          <ul class="card__tags">
+            <li class="card__tag">미스터_포테토</li>
+            <li class="card__tag">미스_포테토</li>
+            <li class="card__tag">감자</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/potato.png" alt="토이스토리 포테이토 부부" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">알린</header>
+          <ul class="card__tags">
+            <li class="card__tag">외계인</li>
+            <li class="card__tag">하~이</li>
+            <li class="card__tag">트리오</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/alien.png" alt="토이스토리 알린" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+        <article class="card">
+          <header class="card__title">포키</header>
+          <ul class="card__tags">
+            <li class="card__tag">포크</li>
+            <li class="card__tag">눈물</li>
+            <li class="card__tag">핸드</li>
+          </ul>
+          <i class="card__tag--plus--tag">+</i>
+          <img src="assets/image/forky.png" alt="토이스토리 포키" class="card__img" />
+          <i class="card__icon--like">♥︎</i>
+        </article>
+      </section>
     </main>
     <footer>made by jisoo</footer>
-</body>
+  </body>
 </html>
