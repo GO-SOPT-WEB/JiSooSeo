@@ -1,4 +1,4 @@
-const data = {
+export const data = {
   cards: [
     {
       id: 1,
@@ -56,5 +56,3 @@ const data = {
     },
   ],
 };
-
-export { data };
