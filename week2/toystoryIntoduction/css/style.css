@@ -1,254 +1,291 @@
-@import "reset.css";
+@import 'reset.css';
 @import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
 
 /* 전체 */
-body{
-    background-color: whitesmoke;
+body {
+  background-color: whitesmoke;
 
-    font-family: 'Poor Story', cursive;
+  font-family: 'Poor Story', cursive;
 }
 
 /* 헤더 */
-.header{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    position: sticky;
-    top: 0;
-    padding: 2rem;
+  position: sticky;
+  top: 0;
+  padding: 2rem;
 
-    background-color: rgb(61, 139, 179);
+  background-color: rgb(61, 139, 179);
 }
 
-.header__title{
-    font-size: 2rem;
-    font-weight: bold;
+.header__title {
+  font-size: 2rem;
+  font-weight: bold;
 
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
-.header__icon{
-    width: 2rem;
+.header__icon {
+  width: 2rem;
 }
 
 /* 메인 */
-main{
-    display: flex;
+main {
+  display: flex;
 }
 
 /* 네브 */
-.nav{
-    width: 10rem;
-    height: 13.5rem;
-    margin: 1rem 0 0 1rem;
-    padding: 1rem;
+.nav {
+  width: 10rem;
+  height: 13.5rem;
+  margin: 1rem 0 0 1rem;
+  padding: 1rem;
 
-    border-radius: 1rem;
-   
-    background-color: rgb(61, 139, 179);
+  border-radius: 1rem;
 
-    font-size: 1.2rem;
+  background-color: rgb(61, 139, 179);
+
+  font-size: 1.2rem;
 }
 
-.nav__header{
-    font-weight: bold;
-    color: whitesmoke;
+.nav__header {
+  font-weight: bold;
+  color: whitesmoke;
 }
 
-.nav__tag{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.nav__tag {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-    width: 9rem;
-    height: 1.5rem;
+  width: 9rem;
+  height: 1.5rem;
 
-    margin-top: 0.5rem;
-    padding: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
 
-    border-radius: 3rem;
+  border-radius: 3rem;
 
-    background-color: whitesmoke;
+  background-color: whitesmoke;
 }
 
-.nav__tag:hover{
-    background-color: rgb(255, 171, 193);
-    cursor: pointer;
+.nav__tag:hover {
+  background-color: rgb(255, 171, 193);
+  cursor: pointer;
 }
 
 /* 카드섹션 */
-.card__section{
-    display: flex;
-    flex-wrap: wrap;
+.card__section {
+  display: flex;
+  flex-wrap: wrap;
 
-    margin: 0.5rem 0 0 0.4rem;
+  margin: 0.5rem 0 0 0.4rem;
 }
 
-.card{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 
-    width: 14rem;
-    height: 20rem;
-    margin: 0.5rem;
+  width: 14rem;
+  height: 20rem;
+  margin: 0.5rem;
 
-    border: 0.1rem solid rgb(61, 139, 179);
-    border-radius: 1rem;
-    box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgb(61, 139, 179);
-    background-color: white;
+  border: 0.1rem solid rgb(61, 139, 179);
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgb(61, 139, 179);
+  background-color: white;
 }
 
-.card__title{
-    font-size: 1.8rem;
-    font-weight: bold;
+.card__title {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-.card__tags{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+.card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 
-    width: 11rem;
-    height: 2rem;
+  width: 11rem;
+  height: 2rem;
 
-    overflow: hidden;
+  overflow: hidden;
 }
 
-.card__tag{
-    display: flex;
-    align-items: center;
+.card__tag {
+  display: flex;
+  align-items: center;
 
-    height: 1.5rem;
-    margin:0.2rem 0.2rem;
-    padding: 0 0.5rem;
+  height: 1.5rem;
+  margin: 0.2rem 0.2rem;
+  padding: 0 0.5rem;
 
-    border: 0.1rem solid rgb(61, 139, 179);
-    border-radius: 2rem;
+  border: 0.1rem solid rgb(61, 139, 179);
+  border-radius: 2rem;
 
-    font-size: 0.7rem;
+  font-size: 0.7rem;
 }
 
-.card__tag--plus--tag{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.card__tag--plus--tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    width: 1.2rem;
-    height: 1.2rem;
+  width: 1.2rem;
+  height: 1.2rem;
 
-    margin: -2.7rem 0 0 11.5rem;
+  margin: -2.7rem 0 0 11.5rem;
 
-    border-radius: 3rem;
-    background-color: rgb(61, 139, 179);
+  border-radius: 3rem;
+  background-color: rgb(61, 139, 179);
 
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
-.card__tag--plus--tag:hover{
-    background-color: rgb(255, 171, 193);
-    cursor: pointer;
+.card__tag--plus--tag:hover {
+  background-color: rgb(255, 171, 193);
+  cursor: pointer;
 }
 
-.card__img{
-    width: 10rem;
+.card__img {
+  width: 10rem;
 }
 
-.card__icon--like{
-    margin-left: 9rem;
+.card__icon--like {
+  margin-left: 9rem;
 
-    font-size: 1.5rem;
-    color: black;
+  font-size: 1.5rem;
+  color: black;
 }
 
-.card__icon--like:hover{
-    color:  rgb(255, 171, 193);
-    cursor: pointer;
+.card__icon--like:hover {
+  color: rgb(255, 171, 193);
+  cursor: pointer;
 }
 
 /* 메뉴바 */
-.menu__bar{
-    display:none;
-    flex-direction: column;
-    align-items: center;
+.menu__bar {
+  display: none;
+  flex-direction: column;
+  align-items: center;
 
+  position: absolute;
 
-    position: absolute;
+  right: 0;
+  top: 0;
+  padding-top: 3rem;
 
-    right: 0;
-    top:0;
-    padding-top: 3rem;
+  width: 20rem;
+  height: 100vh;
 
+  background-color: white;
+}
+
+.menu__bar:hover {
+  display: flex;
+}
+
+.menu__bar__title {
+  width: 13rem;
+
+  margin-bottom: 3rem;
+
+  font-size: 2rem;
+}
+
+.menu__bar__title:hover {
+  color: rgb(61, 139, 179);
+  cursor: pointer;
+}
+
+.menu__bar__column {
+  width: 13rem;
+
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+
+  font-size: 1.5rem;
+  border-bottom: 0.1rem solid gray;
+}
+
+.menu__bar__column:hover {
+  color: rgb(61, 139, 179);
+  cursor: pointer;
+}
+
+.header__icon:hover + .menu__bar {
+  display: flex;
+}
+
+.header__icon:hover ~ .card__section {
+  z-index: -1;
+}
+
+@media (max-width: 750px) {
+  .card {
     width: 20rem;
-    height: 100vh;
+  }
 
-    background-color: white;
-}
-
-.menu__bar:hover{
+  .card__section {
     display: flex;
-}
-
-.menu__bar__title{
-    width: 13rem;
-
-    margin-bottom: 3rem;
-
-    font-size: 2rem;
-}
-
-.menu__bar__title:hover{
-    color: rgb(61, 139, 179);
-    cursor: pointer;
-}
-
-.menu__bar__column{
-    width: 13rem;
-
-    margin-bottom: 2rem;
-    padding-bottom: 0.5rem;
-
-    font-size: 1.5rem;
-    border-bottom: 0.1rem solid gray;
-}
-
-.menu__bar__column:hover{
-    color: rgb(61, 139, 179);
-    cursor: pointer;
-}
-
-.header__icon:hover + .menu__bar{
-    display: flex;
-}
-
-.header__icon:hover ~ .card__section{
-    z-index: -1;
-}
-
-
-@media (max-width:750px){ 
-    .card{
-        width: 20rem;
-    }
-
-    .card__section{
-        display: flex;
-        justify-content: center;
-    }
+    justify-content: center;
+  }
 }
 
 /* 푸터 */
-footer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    height:3rem;
+  height: 3rem;
 }
 
 .card__tag::before {
-    content: "#";
-  }
+  content: '#';
+}
+
+/* 선택된 태그 구현 */
+.selected_tags {
+  display: flex;
+
+  margin: 1rem;
+  width: 100%;
+}
+
+.selected_tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+
+  color: white;
+  border: 0.1rem solid rgb(9, 92, 134);
+  border-radius: 1rem;
+  box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgb(9, 92, 134);
+  background-color: rgb(61, 139, 179);
+}
+
+.selected_tag--delete-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1rem;
+  height: 0.9rem;
+  padding-bottom: 0.1rem;
+  margin-left: 0.5rem;
+  margin-right: -0.5rem;
+
+  color: rgb(61, 139, 179);
+  border-radius: 3rem;
+  background-color: whitesmoke;
+}
