@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/main.js" type="module"></script>
+    <script src="./js/map.js" type="module"></script>
     <script src="./js/cards.js" type="module"></script>
+    <script src=./js/main.js type="text/javascript"></script>
     <title>토이스토리 장난감가게</title>
   </head>
   <body>
@@ -25,20 +26,30 @@
     <main>
       <nav class="nav">
         <header class="nav__header">종류</header>
-        <ul>
-          <li class="nav__tag"><input type="checkbox" />전체 🎬</li>
-          <li class="nav__tag"><input type="checkbox" />주인공 🤹‍♀️</li>
-          <li class="nav__tag"><input type="checkbox" />악인 🎪</li>
-          <li class="nav__tag"><input type="checkbox" />뉴페이스 🎼</li>
+        <ul onclick="selectCategory()">
+          <li class="nav__tag">
+            <input type="checkbox" name="category" value="total" />전체 🎬
+          </li>
+          <li class="nav__tag">
+            <input type="checkbox" name="category" value="main-character" />주인공 🤹‍♀️
+          </li>
+          <li class="nav__tag"><input type="checkbox" name="category" value="evil" />악인 🎪</li>
+          <li class="nav__tag">
+            <input type="checkbox" name="category" value="new-face" />뉴페이스 🎼
+          </li>
         </ul>
       </nav>
 
       <section class="card__section">
         <ul class="selected_tags">
-          <li class="selected_tag">전체 🎬<i class="selected_tag--delete-tag">x</i></li>
-          <li class="selected_tag">주인공 🤹‍♀️<i class="selected_tag--delete-tag">x</i></li>
-          <li class="selected_tag">악인 🎪<i class="selected_tag--delete-tag">x</i></li>
-          <li class="selected_tag">뉴페이스 🎼<i class="selected_tag--delete-tag">x</i></li>
+          <li class="selected_tag" id="total">전체 🎬<i class="selected_tag--delete-tag">x</i></li>
+          <li class="selected_tag" id="main-character">
+            주인공 🤹‍♀️<i class="selected_tag--delete-tag">x</i>
+          </li>
+          <li class="selected_tag" id="evil">악인 🎪<i class="selected_tag--delete-tag">x</i></li>
+          <li class="selected_tag" id="new-face">
+            뉴페이스 🎼<i class="selected_tag--delete-tag">x</i>
+          </li>
         </ul>
       </section>
     </main>
