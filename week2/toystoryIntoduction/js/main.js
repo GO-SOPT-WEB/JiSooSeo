@@ -6,6 +6,11 @@ function selectCategory() {
   for (var i = 0; i < check.length; i++) {
     if (check[i].checked == true) {
       check_box.push(check[i].value);
+      let cheked_tag = document.querySelector(`#${check[i].value}`);
+      cheked_tag.style.display = 'flex';
+    } else {
+      let cheked_tag = document.querySelector(`#${check[i].value}`);
+      cheked_tag.style.display = 'none';
     }
   }
 }
