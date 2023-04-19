@@ -24,8 +24,13 @@ function selectCategory() {
 
 function sortCategory(check_box) {
   const cards = document.querySelectorAll('.card');
-
   if (!check_box.includes('total')) {
+    if (check_box.length === 0) {
+      for (let i = 0; i < cards.length; i++) {
+        cards[i].style.display = 'flex';
+      }
+      return;
+    }
     for (let i = 0; i < cards.length; i++) {
       let cards_category = cards[i].getAttribute('value');
       let selected_cards = document.querySelectorAll(`.${cards_category}`);
@@ -50,10 +55,13 @@ function deleteCategory(value) {
   cheked_tag.style.display = 'none';
   const check = document.querySelectorAll("input[name='category']");
   for (let i = 0; i < check.length; i++) {
-    if (check[i].value === value) {
+    if (check[i].checked && check[i].value === value) {
       check[i].checked = false;
+      check_box.pop(check[i].value);
     }
   }
+  console.log(check_box);
+  sortCategory(check_box);
 }
 
 //해시태그 모달

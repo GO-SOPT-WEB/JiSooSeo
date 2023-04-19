@@ -105,23 +105,23 @@ main {
 }
 
 .total {
-  display: none;
+  display: flex;
 }
 
 .main-character {
-  display: none;
+  display: flex;
 }
 
 .evil {
-  display: none;
+  display: flex;
 }
 
 .new-face {
-  display: none;
+  display: flex;
 }
 
 .etc {
-  display: none;
+  display: flex;
 }
 
 .card__title {
