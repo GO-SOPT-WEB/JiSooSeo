@@ -314,3 +314,39 @@ footer {
   border-radius: 3rem;
   background-color: whitesmoke;
 }
+
+/* 해시태그 모달 */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+}
+.modal__hashtags {
+  width: 5rem;
+  height: 5rem;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  background-color: rgb(61, 139, 179);
+}
+
+.modal__hashtag::before {
+  content: '#';
+}
+
+.modal--close--tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: -6rem 0 0 6rem;
+
+  border-radius: 3rem;
+  background-color: white;
+}

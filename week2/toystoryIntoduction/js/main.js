@@ -39,3 +39,8 @@ function selectCategory() {
 
 // obj.num = 13; // 객체obj의 변수num 값 13으로 세팅
 // obj.num; // 13 출력
+
+//해시태그 모달
+// function showHashtagsModal(hashtags) {
+
+// }
