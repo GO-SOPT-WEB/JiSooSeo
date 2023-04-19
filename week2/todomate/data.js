@@ -52,7 +52,7 @@ export const data = {
     {
       id: 0,
       header: 'SOPT',
-      list: [
+      todos: [
         '해삐🌼웹팟 세미나',
         '금잔디 코드리뷰',
         '아티클스터디 아티클',
@@ -63,22 +63,22 @@ export const data = {
     {
       id: 1,
       header: 'CAU',
-      list: ['한자 문제 제작 과제', '한자 필사 과제', '강의 수강'],
+      todos: ['한자 문제 제작 과제', '한자 필사 과제', '강의 수강'],
     },
     {
       id: 2,
       header: 'ROUTINE',
-      list: ['필라테스', '독서', '1일1커밋'],
+      todos: ['필라테스', '독서', '1일1커밋'],
     },
     {
       id: 3,
       header: 'ETC',
-      list: ['마스크 주문하기', '당근 택배부치기'],
+      todos: ['마스크 주문하기', '당근 택배부치기'],
     },
     {
       id: 4,
       header: 'FRIENDS',
-      list: [
+      todos: [
         '버즈 생일 챙기기',
         '우디 생일 챙기기',
         '제시 생일 챙기기',
@@ -89,17 +89,17 @@ export const data = {
     {
       id: 5,
       header: 'CLEAN',
-      list: ['청소', '빨래', '환기'],
+      todos: ['청소', '빨래', '환기'],
     },
     {
       id: 6,
       header: 'MEETING',
-      list: ['스타트업 서핑 킥오프', 'Track1 코어타임'],
+      todos: ['스타트업 서핑 킥오프', 'Track1 코어타임'],
     },
     {
       id: 7,
       header: 'PLAY',
-      list: ['노래듣기', '더 글로리 보기'],
+      todos: ['노래듣기', '더 글로리 보기'],
     },
   ],
 };

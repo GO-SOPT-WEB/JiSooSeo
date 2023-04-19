@@ -10,6 +10,10 @@ body {
   font-family: 'Poor Story', cursive;
 }
 
+label {
+  cursor: pointer;
+}
+
 .mobile {
   width: 30rem;
 
@@ -108,6 +112,7 @@ body {
   justify-content: space-between;
 
   padding: 0.5rem;
+  margin-top: 1rem;
 
   border-radius: 3rem;
   border: 0.1rem solid skyblue;
@@ -181,8 +186,10 @@ body {
 
 .list__column {
   display: flex;
+  height: 2rem;
+  background-color: pink;
 
-  margin: 0.4rem 0;
+  margin: 1rem 0 -2rem 0;
 }
 
 /* 푸터 */
