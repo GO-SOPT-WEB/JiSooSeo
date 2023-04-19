@@ -15,22 +15,31 @@ function checkCategory() {
       cheked_tag.style.display = 'none';
     }
   }
+  sortCategory(check_box);
 }
 
 function selectCategory() {
   checkCategory();
-  sortCategory(check_box);
 }
 
 function sortCategory(check_box) {
-  const cards = document.getElementsByClassName('card');
+  const cards = document.querySelectorAll('.card');
 
   if (!check_box.includes('total')) {
-    for (let i = 0; i < check_box.length; i++) {
-      let cards_category = document.querySelectorAll(`.${check_box[i]}`);
-      for (let k = 0; k < cards_category.length; k++) {
-        cards_category[k].style.display = 'flex';
+    for (let i = 0; i < cards.length; i++) {
+      let cards_category = cards[i].getAttribute('value');
+      let selected_cards = document.querySelectorAll(`.${cards_category}`);
+      for (let j = 0; j < selected_cards.length; j++) {
+        if (check_box.includes(cards_category)) {
+          selected_cards[j].style.display = 'flex';
+        } else {
+          selected_cards[j].style.display = 'none';
+        }
       }
+    }
+  } else {
+    for (let i = 0; i < cards.length; i++) {
+      cards[i].style.display = 'flex';
     }
   }
 }
