@@ -37,7 +37,7 @@ export const data = {
     {
       id: 5,
       day: '토',
-      list: 9,
+      list: 25,
       date: 8,
     },
 
