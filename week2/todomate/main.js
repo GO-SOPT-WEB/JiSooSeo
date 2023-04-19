@@ -8,34 +8,6 @@ document.querySelector('#app').innerHTML = `
     <div class="calendar__column">
     </div>
     <ul class="calendar__column">
-        <li>
-            <i class="calendar__column--to--do--list">7</i>
-            <p class="calendar__column--date">3</p>
-        </li>
-        <li>
-            <i class="calendar__column--to--do--list">8</i>
-            <p class="calendar__column--date">4</p>
-        </li>
-            <li>
-            <i class="calendar__column--to--do--list">6</i>
-            <p class="calendar__column--date">5</p>
-        </li>
-            <li>
-            <i class="calendar__column--to--do--list">6</i>
-            <p class="calendar__column--date">6</p>
-        </li>
-            <li>
-            <i class="calendar__column--to--do--list">7</i>
-            <p class="calendar__column--date">7</p>
-        </li>
-            <li>
-            <i class="calendar__column--to--do--list">9</i>
-            <p class="calendar__column--date">8</p>
-        </li>
-            <li>
-            <i class="calendar__column--to--do--list">10</i>
-            <p class="calendar__column--date">9</p>
-        </li>
     </ul>
 </section>
 
@@ -54,7 +26,7 @@ document.querySelector('#app').innerHTML = `
 {
   data.calendar.map(
     ({ id, day }) =>
-      (document.querySelector('div+.calendar__column').innerHTML += `
+      (document.querySelector('div.calendar__column').innerHTML += `
       <p class="calendar__column--days">${day}</p>
   `)
   );
@@ -63,7 +35,7 @@ document.querySelector('#app').innerHTML = `
 {
   data.calendar.map(
     ({ id, list, date }) =>
-      (document.querySelector('ul+.calendar__column').innerHTML += `
+      (document.querySelector('ul.calendar__column').innerHTML += `
       <li>
           <i class="calendar__column--to--do--list">${list}</i>
           <p class="calendar__column--date">${date}</p>
