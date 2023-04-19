@@ -27,16 +27,3 @@ import { data } from './cards.js';
   </article>`)
   );
 }
-
-function showHashtagsModal(hashtags) {
-  document.querySelector('.card').innerHTML = `
-  <article class="modal">
-    <ul class="card__tags">
-      <li class="card__tag">${hashtags[0]}</li>
-      <li class="card__tag">${hashtags[1]}</li>
-      <li class="card__tag">${hashtags[2]}</li>
-    </ul>
-    <i>x</i>
-  </article>
-  `;
-}
