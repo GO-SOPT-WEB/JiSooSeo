@@ -57,7 +57,7 @@ function deleteCategory(value) {
   for (let i = 0; i < check.length; i++) {
     if (check[i].checked && check[i].value === value) {
       check[i].checked = false;
-      check_box.pop(check[i].value);
+      check_box = check_box.filter((element) => element !== check[i].value);
     }
   }
   console.log(check_box);
