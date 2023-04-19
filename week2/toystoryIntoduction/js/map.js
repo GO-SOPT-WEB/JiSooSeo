@@ -4,7 +4,6 @@ import { data } from './cards.js';
 {
   data.cards.map(
     ({ id, name, hashtags, img, category }) =>
-      // check_box.includes(category) &&
       (document.querySelector('.card__section').innerHTML += `
     <article class="card ${category}" value=${category}>
       <article class="modal">

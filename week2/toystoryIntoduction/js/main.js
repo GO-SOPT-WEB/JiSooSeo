@@ -1,6 +1,4 @@
 //네비게이션 태그 필터링
-// let selected_category = [];
-
 function checkCategory() {
   const check = document.querySelectorAll("input[name='category']");
 
@@ -49,7 +47,7 @@ function sortCategory(check_box) {
   }
 }
 
-//태그 x 버튼 클릭 시 삭제
+//선택된 태그 x 버튼 클릭 시 삭제
 function deleteCategory(value) {
   let cheked_tag = document.querySelector(`#${value}`);
   cheked_tag.style.display = 'none';
@@ -60,7 +58,6 @@ function deleteCategory(value) {
       check_box = check_box.filter((element) => element !== check[i].value);
     }
   }
-  console.log(check_box);
   sortCategory(check_box);
 }
 
