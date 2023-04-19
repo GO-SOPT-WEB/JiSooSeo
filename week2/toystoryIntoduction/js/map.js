@@ -3,7 +3,8 @@ import { data } from './cards.js';
 // 카드 map 함수
 {
   data.cards.map(
-    ({ id, name, hashtags, img }) =>
+    ({ id, name, hashtags, img, category }) =>
+      //  selectCategory().includes(category) &&
       (document.querySelector('.card__section').innerHTML += `
     <article class="card">
     <header class="card__title">${name}</header>
