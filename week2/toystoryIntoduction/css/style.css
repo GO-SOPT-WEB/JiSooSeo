@@ -90,7 +90,6 @@ main {
 }
 
 .card {
-  display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -103,6 +102,26 @@ main {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgb(61, 139, 179);
   background-color: white;
+}
+
+.total {
+  display: flex;
+}
+
+.main-character {
+  display: flex;
+}
+
+.evil {
+  display: flex;
+}
+
+.new-face {
+  display: flex;
+}
+
+.etc {
+  display: flex;
 }
 
 .card__title {
