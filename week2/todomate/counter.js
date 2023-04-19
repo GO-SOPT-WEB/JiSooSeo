@@ -11,21 +11,12 @@ function solvedTodo() {
 }
 
 function openModal(header) {
-  // let background = document.querySelector('.mobile');
   let modal = document.querySelector('.modal__wrapper');
-
-  // background.style.filter = 'blur(0.3rem)';
   modal.style.display = 'flex';
-
-  // let todo = document.querySelector('.modal--write--todo').target.value;
-  // console.log(todo);
 }
 
 function closeModal() {
-  // let background = document.querySelector('.mobile');
   let modal = document.querySelector('.modal__wrapper');
-
-  // background.style.filter = 'blur(0rem)';
   modal.style.display = 'none';
 }
 

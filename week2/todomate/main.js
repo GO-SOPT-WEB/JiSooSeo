@@ -52,15 +52,14 @@ document.querySelector('#app').innerHTML = `
     ({ id, header, todos }) =>
       (document.querySelector('.lists').innerHTML += `
       <article class="list">
-          <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">
-          <aside class="modal__wrapper">
-            <div class="modal">
-            <i class="modal--close--tag" onclick="closeModal()">x</i>
-            <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo" onchange="writeTodo(e)"/>
-            <button type="submit" onclick="addTodo()">추가</button>
-            <div>
-          </aside>
-          +</i></header>
+        <aside class="modal__wrapper">
+          <div class="modal">
+          <i class="modal--close--tag" onclick="closeModal()">x</i>
+          <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo" onchange="writeTodo(e)"/>
+          <button type="submit" onclick="addTodo()">추가</button>
+          <div>
+        </aside>
+          <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">+</i></header>
           <ul id=${header}>
             ${todos.map(
               (todo, idx) =>
