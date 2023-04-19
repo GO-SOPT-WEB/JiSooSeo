@@ -1,5 +1,6 @@
 import './style.css';
 import { data } from './data';
+// import { solvedTodo } from './counter.js';
 
 document.querySelector('#app').innerHTML = `
 <header class="header mobile">🌷 WEB TO DO MATE 🌷</header>
@@ -57,7 +58,7 @@ document.querySelector('#app').innerHTML = `
               (todo, idx) =>
                 `
                 <li class="list__column">
-                  <label for="${header}__input-text${idx + 1}">🎁 </label>
+                  <label for="${header}__input-text${idx + 1}" onclick="solvedTodo()">🎁 </label>
                   <input type="checkbox" id="${header}__input-text${idx + 1}" />
                   <p class="list__column__text">${todo}</p>
                 </li>
