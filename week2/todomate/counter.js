@@ -9,3 +9,19 @@ function solvedTodo() {
 
   console.log(cnt);
 }
+
+function openModal(header) {
+  let background = document.querySelector('.mobile');
+  let modal = document.querySelector('.modal');
+
+  background.style.filter = 'blur(0.3rem)';
+  modal.style.display = 'flex';
+}
+
+function closeModal() {
+  let background = document.querySelector('.mobile');
+  let modal = document.querySelector('.modal');
+
+  background.style.filter = 'blur(0rem)';
+  modal.style.display = 'none';
+}

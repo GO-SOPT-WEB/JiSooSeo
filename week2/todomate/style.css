@@ -234,6 +234,40 @@ i {
   text-decoration-line: line-through;
 }
 
-input {
+input[type='checkbox'] {
   display: none;
+}
+
+/* 모달 */
+.modal {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 2;
+  width: 15rem;
+  height: 10rem;
+  margin: 20rem 7.5rem;
+
+  border-radius: 1rem;
+  background-color: rgb(253, 223, 228);
+}
+
+.modal--close--tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 1rem;
+  height: 1rem;
+  padding: 0.1rem 0.2rem 0.2rem 0.2rem;
+
+  border-radius: 2rem;
+  background-color: #ff6a83;
+}
+
+input[type='text'] {
+  margin: 1rem 0;
 }

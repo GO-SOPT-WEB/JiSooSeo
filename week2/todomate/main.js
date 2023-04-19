@@ -3,8 +3,14 @@ import { data } from './data';
 // import { solvedTodo } from './counter.js';
 
 document.querySelector('#app').innerHTML = `
-<header class="header mobile">🌷 WEB TO DO MATE 🌷</header>
-<main class="main mobile">
+<aside class="modal">
+  <i class="modal--close--tag" onclick="closeModal()">x</i>
+  <input type="text" placeholder="할 일을 입력해주세요" onchange="addTodo(e)"/>
+  <button type="submit">추가</button>
+</aside>
+<section class="mobile">
+<header class="header">🌷 WEB TO DO MATE 🌷</header>
+<main class="main">
 <section class="calendar">
     <div class="calendar__column">
     </div>
@@ -14,7 +20,7 @@ document.querySelector('#app').innerHTML = `
 <section class="lists">
 </section>
 </main>
-<footer class="footer mobile">
+<footer class="footer">
 <button type="button" class="footer__button">
 <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘"/></i>
 <p>달력</p>
@@ -24,6 +30,7 @@ document.querySelector('#app').innerHTML = `
 <p>MY</p>
 </button>
 </footer>
+</section>
 `;
 
 {
@@ -52,7 +59,7 @@ document.querySelector('#app').innerHTML = `
     ({ id, header, todos }) =>
       (document.querySelector('.lists').innerHTML += `
       <article class="list">
-          <header class="list__header">${header}<i class="list__header--add--btn">+</i></header>
+          <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">+</i></header>
           <ul id=${header}>
             ${todos.map(
               (todo, idx) =>
