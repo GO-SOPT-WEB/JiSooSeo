@@ -2,10 +2,10 @@
 //let selected_category = [];
 
 function checkCategory() {
-  const check = document.getElementsByName('category');
+  const check = document.querySelectorAll("input[name='category']");
 
   check_box = [];
-  for (var i = 0; i < check.length; i++) {
+  for (let i = 0; i < check.length; i++) {
     if (check[i].checked == true) {
       check_box.push(check[i].value);
       //selected_category.push(check[i].value);
@@ -25,6 +25,17 @@ function selectCategory() {
   // console.log(check_box);
 }
 
+//태그 x 버튼 클릭 시 삭제
+function deleteCategory(value) {
+  let cheked_tag = document.querySelector(`#${value}`);
+  cheked_tag.style.display = 'none';
+  const check = document.querySelectorAll("input[name='category']");
+  for (let i = 0; i < check.length; i++) {
+    if (check[i].value === value) {
+      check[i].checked = false;
+    }
+  }
+}
 // var obj = {};
 
 // Object.defineProperty(obj, 'num', {

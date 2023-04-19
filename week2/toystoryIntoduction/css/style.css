@@ -8,6 +8,10 @@ body {
   font-family: 'Poor Story', cursive;
 }
 
+input {
+  cursor: pointer;
+}
+
 /* 헤더 */
 .header {
   display: flex;
@@ -313,6 +317,8 @@ footer {
   color: rgb(61, 139, 179);
   border-radius: 3rem;
   background-color: whitesmoke;
+
+  cursor: pointer;
 }
 
 /* 해시태그 모달 */
