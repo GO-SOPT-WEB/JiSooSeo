@@ -28,22 +28,14 @@ function sortCategory(check_box) {
   const cards = document.getElementsByClassName('card');
 
   if (!check_box.includes('total')) {
-    // for (let i = 0; i < check_box.length; i++) {
-    for (let j = 0; j < cards.length; j++) {
-      let card_value = cards[j].getAttribute('value');
-      if (check_box.includes(card_value)) {
-        let cards_category = document.querySelector(`.${card_value}`);
-        cards_category.style.display = 'flex';
-      } else {
-        let cards_category = document.querySelector(`.${card_value}`);
-        cards_category.style.display = 'none';
+    for (let i = 0; i < check_box.length; i++) {
+      let cards_category = document.querySelectorAll(`.${check_box[i]}`);
+      for (let k = 0; k < cards_category.length; k++) {
+        cards_category[k].style.display = 'flex';
       }
     }
-    // }
   }
 }
-// selectCategory();
-// console.log(selected_category);
 
 //태그 x 버튼 클릭 시 삭제
 function deleteCategory(value) {
