@@ -11,6 +11,12 @@ body {
 }
 
 label {
+  margin-right: 0.3rem;
+
+  cursor: pointer;
+}
+
+i {
   cursor: pointer;
 }
 
