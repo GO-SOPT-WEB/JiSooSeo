@@ -65,7 +65,9 @@ document.querySelector('#app').innerHTML = `
               (todo, idx) =>
                 `
                 <li class="list__column">
-                  <label for="${header}__input-text${idx + 1}" onclick="solvedTodo()">🎁 </label>
+                  <label for="${header}__input-text${
+                  idx + 1
+                }" onclick="solvedTodo('${header}__input-text${idx + 1}')">🎁 </label>
                   <input type="checkbox" id="${header}__input-text${idx + 1}" />
                   <p class="list__column__text">${todo}</p>
                 </li>

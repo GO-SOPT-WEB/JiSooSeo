@@ -1,13 +1,19 @@
-function solvedTodo() {
+function solvedTodo(tag) {
+  console.log('ddd');
+  let input = document.querySelector(`#${tag}`);
   let cnt = document.querySelector(
     '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
   ).textContent;
-  //cnt -= 1;
-  document.querySelector(
-    '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
-  ).innerText = cnt - 1;
 
-  console.log(cnt);
+  if (!input.checked) {
+    document.querySelector(
+      '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
+    ).innerText = cnt - 1;
+  } else {
+    document.querySelector(
+      '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
+    ).innerText = parseInt(cnt) + 1;
+  }
 }
 
 function openModal(header) {
