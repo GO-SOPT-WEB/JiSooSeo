@@ -29,11 +29,13 @@ function closeModal() {
 
 function addTodo() {
   let input = document.querySelector('.modal--write--todo').value;
-  let tab = document.querySelector(`#${clicked_header.getAttribute('id')}`);
+  let id = clicked_header.getAttribute('id');
+  let tab = document.querySelector(`#${id}`);
+
   tab.innerHTML += `
   <li class="list__column__new">
-    <label for="${tab}__input-text4" onclick="solvedTodo()">🎁 </label>
-    <input type="checkbox" id="${tab}__input-text4" />
+    <label for="${id}__input-text4" onclick="solvedTodo('${id}__input-text4')">🎁 </label>
+    <input type="checkbox" id="${id}__input-text4" />
     <p class="list__column__text">${input}</p>
   </li>
   `;
