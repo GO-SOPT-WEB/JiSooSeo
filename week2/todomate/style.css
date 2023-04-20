@@ -198,6 +198,15 @@ i {
   margin: 1rem 0 -2rem 0;
 }
 
+.list__column__new {
+  display: flex;
+  height: 2rem;
+  background-color: pink;
+
+  margin: 1rem 0 -3rem 0;
+  padding: 1rem 0;
+}
+
 /* 푸터 */
 .footer {
   display: flex;

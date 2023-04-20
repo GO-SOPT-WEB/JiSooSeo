@@ -13,6 +13,8 @@ function solvedTodo() {
 function openModal(header) {
   let modal = document.querySelector('.modal__wrapper');
   modal.style.display = 'flex';
+
+  clicked_header = header;
 }
 
 function closeModal() {
@@ -20,10 +22,23 @@ function closeModal() {
   modal.style.display = 'none';
 }
 
-function writeTodo(e) {
-  todo = e.target.value;
+function addTodo() {
+  let input = document.querySelector('.modal--write--todo').value;
+  let tab = document.querySelector(`#${clicked_header.getAttribute('id')}`);
+  tab.innerHTML += `
+  <li class="list__column__new">
+    <label for="${tab}__input-text4" onclick="solvedTodo()">🎁 </label>
+    <input type="checkbox" id="${tab}__input-text4" />
+    <p class="list__column__text">${input}</p>
+  </li>
+  `;
 
-  console.log(todo);
+  input = '';
+  closeModal();
+  let cnt = document.querySelector(
+    '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
+  ).textContent;
+  document.querySelector(
+    '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
+  ).innerText = parseInt(cnt) + 1;
 }
-
-// function addTodo

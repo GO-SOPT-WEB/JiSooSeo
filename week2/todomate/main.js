@@ -55,7 +55,7 @@ document.querySelector('#app').innerHTML = `
         <aside class="modal__wrapper">
           <div class="modal">
           <i class="modal--close--tag" onclick="closeModal()">x</i>
-          <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo" onchange="writeTodo(e)"/>
+          <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo"/>
           <button type="submit" onclick="addTodo()">추가</button>
           <div>
         </aside>
