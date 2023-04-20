@@ -294,3 +294,24 @@ input[type='checkbox'] {
 input[type='text'] {
   margin: 1rem 0;
 }
+
+a {
+  text-decoration: none;
+}
+
+.calendar__column--flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin: -1rem;
+}
+
+.calendar__column--flex__header {
+  padding: 1rem;
+  margin: 0.3rem;
+
+  border-radius: 2rem;
+  background-color: #ff6a83;
+}

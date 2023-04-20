@@ -15,14 +15,18 @@ document.querySelector('#app').innerHTML = `
 </section>
 </main>
 <footer class="footer mobile">
-<button type="button" class="footer__button">
-<i><img src="assets/icon/homeIc.svg" alt="달력 아이콘"/></i>
-<p>달력</p>
-</button>
-<button type="button" class="footer__button">
-<i><img src="assets/icon/personIc.svg" alt="사람 아이콘"/></i>
-<p>MY</p>
-</button>
+<a href="/">
+  <button type="button" class="footer__button">
+  <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘"/></i>
+  <p>달력</p>
+  </button>
+</a>
+<a href="./mycategory.html">
+  <button type="button" class="footer__button">
+  <i><img src="assets/icon/personIc.svg" alt="사람 아이콘"/></i>
+  <p>MY</p>
+  </button>
+</a>
 </footer>
 `;
 
