@@ -33,16 +33,26 @@
           </article>
           <article class="form__info">
             <header class="form__info__header">장난감 사진</header>
-            <input type="file" />
           </article>
+          <label for="form__info__img">
+            <i><img src="./assets//image/addimg.png" alt="#" class="form__info__img--add-img"/></i>
+          </label>
+  
+          <input
+            type="file"
+            name="file"
+            id="form__info__img"
+            accept="image/*" onchange="setThumbnail(event);"
+          />
           <article class="form__info">
-            <header class="form__info__header">사진 미리보기</header>
-            <div class="form__info__img"></div>
+            <div class="form__info__img--container">
+            </div>
           </article>
           <button type="submit" class="form__info__button">🦾움치키🧸움치키⛄️</button>
         </form>
       </section>
     </main>
     <footer>made by jisoo</footer>
+    <script src=./js/post.js type="text/javascript"></script>
   </body>
 </html>
