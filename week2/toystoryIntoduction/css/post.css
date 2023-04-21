@@ -1,0 +1,13 @@
+@import 'reset.css';
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+
+/* 전체 */
+body {
+  background-color: whitesmoke;
+
+  font-family: 'Poor Story', cursive;
+}
+
+input {
+  cursor: pointer;
+}
