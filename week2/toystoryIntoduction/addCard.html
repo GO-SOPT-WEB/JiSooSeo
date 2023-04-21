@@ -8,35 +8,40 @@
     <title>새 장난감 추가</title>
   </head>
   <body>
-    <header>
-      <h1>🤖장난감을 추가해주세요🤖</h1>
-    </header>
     <main>
-      <form action="./index.html" method="post">
-        <article>
-          <header></header>
-          <input type="text" placeholder="장난감 이름" />
-        </article>
-        <article>
-          <header></header>
-          <input type="text" placeholder="해시태그" />
-        </article>
-        <article>
-          <header></header>
-          <input type="text" placeholder="카테고리" />
-        </article>
-        <article>
-          <header></header>
-          <input type="file" />
-        </article>
-        <select name="toy-category">
-          <option value="total">전체 🎬</option>
-          <option value="main-character">주인공 🤹‍♀️</option>
-          <option value="evil">악인 🎪</option>
-          <option value="new-face">뉴페이스 🎼</option>
-        </select>
-        <button type="submit">🦾움치키🧸움치키⛄️</button>
-      </form>
+      <header class="header">
+        <h1 class="header__title">🤖 장난감을 추가해주세요 🤖</h1>
+      </header>
+      <section class="form__section">
+        <form action="./index.html" method="post">
+          <article class="form__info">
+            <header class="form__info__header">장난감 이름</header>
+            <input type="text" placeholder="장난감 이름" class="form__info__input" />
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">해시태그</header>
+            <input type="text" placeholder="해시태그" class="form__info__input" />
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">카테고리</header>
+            <select name="toy-category">
+              <option value="total">전체 🎬</option>
+              <option value="main-character">주인공 🤹‍♀️</option>
+              <option value="evil">악인 🎪</option>
+              <option value="new-face">뉴페이스 🎼</option>
+            </select>
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">장난감 사진</header>
+            <input type="file" />
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">사진 미리보기</header>
+            <div class="form__info__img"></div>
+          </article>
+          <button type="submit" class="form__info__button">🦾움치키🧸움치키⛄️</button>
+        </form>
+      </section>
     </main>
     <footer>made by jisoo</footer>
   </body>
