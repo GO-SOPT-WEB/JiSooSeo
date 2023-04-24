@@ -120,6 +120,11 @@ main {
   border-radius: 1rem;
   box-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgb(61, 139, 179);
   background-color: white;
+
+  animation: fadein 3s;
+  -moz-animation: fadein 3s; /* Firefox */
+  -webkit-animation: fadein 3s; /* Safari and Chrome */
+  -o-animation: fadein 3s; /* Opera */
 }
 
 .total {
@@ -394,4 +399,13 @@ footer {
   background-color: white;
 
   cursor: pointer;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
