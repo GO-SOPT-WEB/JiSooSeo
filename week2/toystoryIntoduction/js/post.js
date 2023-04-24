@@ -14,12 +14,14 @@ function setThumbnail(event) {
 }
 
 function submit() {
+  let id = Math.floor(Math.random() * (100 - 10 + 1)) + 10;
   let name = document.querySelector('.form__info__input').value;
   let hashtags = document.querySelector('.form__info__input').value;
   let categorys = document.querySelector('.toy-category');
   let category = categorys.options[categorys.selectedIndex].value;
   let img = document.querySelector('.form__info__img').src;
 
+  localStorage.setItem('id', id);
   localStorage.setItem('name', name);
   localStorage.setItem('hashtags', hashtags);
   localStorage.setItem('category', category);
