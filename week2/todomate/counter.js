@@ -18,6 +18,8 @@ function solvedTodo(tag) {
 function openModal(header) {
   let modal = document.querySelector('.modal__wrapper');
   modal.style.display = 'flex';
+  let input_tag = document.querySelector('.modal--write--todo');
+  input_tag.focus();
 
   clicked_header = header;
 }
@@ -42,6 +44,7 @@ function addTodo() {
 
   let input_tag = document.querySelector('input');
   input_tag.value = '';
+  input_tag.focus();
 
   let cnt = document.querySelector(
     '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
