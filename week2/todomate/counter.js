@@ -34,14 +34,15 @@ function addTodo() {
 
   tab.innerHTML += `
   <li class="list__column__new">
-    <label for="${id}__input-text4" onclick="solvedTodo('${id}__input-text4')">🎁 </label>
-    <input type="checkbox" id="${id}__input-text4" />
+    <label for="${id}__input-text" onclick="solvedTodo('${id}__input-textㄴ')">🎁 </label>
+    <input type="checkbox" id="${id}__input-text" />
     <p class="list__column__text">${input}</p>
   </li>
   `;
 
-  input = '';
-  closeModal();
+  let input_tag = document.querySelector('input');
+  input_tag.value = '';
+
   let cnt = document.querySelector(
     '.calendar__column > li:nth-child(6) > .calendar__column--to--do--list'
   ).textContent;
