@@ -48,11 +48,8 @@ function sortCategory(check_box) {
               selected_cards[i].style.animation = 'fadein 1s';
             }
           }, '100');
-          //selected_cards[j].style.display = 'flex';
-          // selected_cards[j].style.animation = 'fadein 3s';
         } else {
           selected_cards[j].style.display = 'none';
-          // selected_cards[j].style.animation = 'fadein 0s';
         }
       }
     }
@@ -65,13 +62,8 @@ function sortCategory(check_box) {
           cards[i].style.animation = 'fadein 1s';
         }
       }, '100');
-      // cards[i].style.animation = 'fadein 3s';
     }
   }
-
-  // for (let i = 0; i < cards.length; i++) {
-  //   cards[i].style.display = 'none';
-  // }
 }
 
 //선택된 태그 x 버튼 클릭 시 삭제
