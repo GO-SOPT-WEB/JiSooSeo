@@ -18,12 +18,12 @@ function submit() {
   let hashtags = document.querySelector('.form__info__input').value;
   let categorys = document.querySelector('.toy-category');
   let category = categorys.options[categorys.selectedIndex].value;
-  let image = document.querySelector('.form__info__img').src;
+  let img = document.querySelector('.form__info__img').src;
 
   localStorage.setItem('name', name);
   localStorage.setItem('hashtags', hashtags);
   localStorage.setItem('category', category);
-  localStorage.setItem('image', image);
+  localStorage.setItem('img', img);
 
   var a = document.createElement('a');
   a.href = './index.html';
