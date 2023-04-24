@@ -22,10 +22,17 @@ function selectCategory() {
 
 function sortCategory(check_box) {
   const cards = document.querySelectorAll('.card');
+
   if (!check_box.includes('total')) {
     if (check_box.length === 0) {
       for (let i = 0; i < cards.length; i++) {
-        cards[i].style.display = 'flex';
+        cards[i].style.display = 'none';
+        setTimeout(() => {
+          for (let i = 0; i < cards.length; i++) {
+            cards[i].style.display = 'flex';
+            cards[i].style.animation = 'fadein 1s';
+          }
+        }, '100');
       }
       return;
     }
@@ -34,17 +41,37 @@ function sortCategory(check_box) {
       let selected_cards = document.querySelectorAll(`.${cards_category}`);
       for (let j = 0; j < selected_cards.length; j++) {
         if (check_box.includes(cards_category)) {
-          selected_cards[j].style.display = 'flex';
+          selected_cards[j].style.display = 'none';
+          setTimeout(() => {
+            for (let i = 0; i < cards.length; i++) {
+              selected_cards[j].style.display = 'flex';
+              selected_cards[i].style.animation = 'fadein 1s';
+            }
+          }, '100');
+          //selected_cards[j].style.display = 'flex';
+          // selected_cards[j].style.animation = 'fadein 3s';
         } else {
           selected_cards[j].style.display = 'none';
+          // selected_cards[j].style.animation = 'fadein 0s';
         }
       }
     }
   } else {
     for (let i = 0; i < cards.length; i++) {
-      cards[i].style.display = 'flex';
+      cards[i].style.display = 'none';
+      setTimeout(() => {
+        for (let i = 0; i < cards.length; i++) {
+          cards[i].style.display = 'flex';
+          cards[i].style.animation = 'fadein 1s';
+        }
+      }, '100');
+      // cards[i].style.animation = 'fadein 3s';
     }
   }
+
+  // for (let i = 0; i < cards.length; i++) {
+  //   cards[i].style.display = 'none';
+  // }
 }
 
 //선택된 태그 x 버튼 클릭 시 삭제
