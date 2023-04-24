@@ -15,8 +15,9 @@ function setThumbnail(event) {
 
 function submit() {
   let id = Math.floor(Math.random() * (100 - 10 + 1)) + 10;
-  let name = document.querySelector('.form__info__input').value;
-  let hashtags = document.querySelector('.form__info__input').value;
+  let name = document.querySelector('#toy-name-input').value;
+  let hashtags = document.querySelector('#toy-hashtags-input').value;
+  console.log(hashtags);
   let categorys = document.querySelector('.toy-category');
   let category = categorys.options[categorys.selectedIndex].value;
   let img = document.querySelector('.form__info__img').src;

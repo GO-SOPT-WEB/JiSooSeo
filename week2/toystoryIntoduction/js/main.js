@@ -74,7 +74,7 @@ window.onload = function () {
   let id = localStorage.getItem('id');
   let name = localStorage.getItem('name');
   let hashtags = localStorage.getItem('hashtags');
-  hashtags = hashtags.split();
+  hashtags = hashtags.split(',');
   let category = localStorage.getItem('category');
   let img = localStorage.getItem('img');
 
