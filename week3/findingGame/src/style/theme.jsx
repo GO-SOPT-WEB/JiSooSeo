@@ -8,7 +8,7 @@ const colors = {
 };
 
 const fonts = {
-  kotrahopeTitle: css`
+  title: css`
     font-family: 'KOTRAHOPE';
     font-style: normal;
     font-weight: 400;
@@ -19,7 +19,7 @@ const fonts = {
     text-align: center;
     letter-spacing: 0.07em;
   `,
-  kotrahopeText: css`
+  text: css`
     font-family: 'KOTRAHOPE';
     font-style: normal;
     font-weight: 400;
@@ -32,9 +32,7 @@ const fonts = {
   `,
 };
 
-const theme = {
+export const theme = {
   colors,
   fonts,
 };
-
-export default theme;
