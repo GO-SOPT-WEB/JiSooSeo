@@ -15,7 +15,7 @@ export function Home() {
 </main>
 <footer class="footer mobile">
 <a href="#/">
-  <button type="button" class="footer__button" data-navigate="#/" id="home"">
+  <button type="button" class="footer__button" data-navigate="#/" id="home">
     <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘" /></i>
     <p>달력</p>
   </button>
