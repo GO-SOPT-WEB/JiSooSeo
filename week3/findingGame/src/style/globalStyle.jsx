@@ -1,131 +1,51 @@
-import { createGlobalStyle, css } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export const reset = css`
-  html,
-  body,
-  div,
-  span,
-  applet,
-  object,
-  iframe,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  p,
-  blockquote,
-  pre,
-  a,
-  abbr,
-  acronym,
-  address,
-  big,
-  cite,
-  code,
-  del,
-  dfn,
-  em,
-  img,
-  ins,
-  kbd,
-  q,
-  s,
-  samp,
-  small,
-  strike,
-  strong,
-  sub,
-  sup,
-  tt,
-  var,
-  b,
-  u,
-  i,
-  center,
-  dl,
-  dt,
-  dd,
-  menu,
-  ol,
-  ul,
-  li,
-  fieldset,
-  form,
-  label,
-  legend,
-  table,
-  caption,
-  tbody,
-  tfoot,
-  thead,
-  tr,
-  th,
-  td,
-  article,
-  aside,
-  canvas,
-  details,
-  embed,
-  figure,
-  figcaption,
-  footer,
-  header,
-  hgroup,
-  main,
-  menu,
-  nav,
-  output,
-  ruby,
-  section,
-  summary,
-  time,
-  mark,
-  audio,
-  video {
+export const GlobalStyle = createGlobalStyle`
+  :root {
+    --vh: 100%;
+   }
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, menu, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed,
+  figure, figcaption, footer, header, hgroup,
+  main, menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
     margin: 0;
-    padding: 0;
     border: 0;
-    font-size: 100%;
-    font: inherit;
+    padding: 0;
     vertical-align: baseline;
+    font: inherit;
+    font-size: 100%;
   }
-  /* HTML5 display-role reset for older browsers */
-  article,
-  aside,
-  details,
-  figcaption,
-  figure,
-  footer,
-  header,
-  hgroup,
-  main,
-  menu,
-  nav,
-  section {
+  article, aside, details, figcaption, figure,
+  footer, header, hgroup, main, menu, nav, section {
     display: block;
   }
-  /* HTML5 hidden-attribute fix for newer browsers */
   *[hidden] {
-    display: none;
+      display: none;
   }
   body {
+    touch-action: manipulation;
     line-height: 1;
+    background-color: ${({ theme }) => theme.colors.sub3};
+
   }
-  menu,
-  ol,
-  ul {
+  menu, ol, ul {
     list-style: none;
   }
-  blockquote,
-  q {
+  blockquote, q {
     quotes: none;
   }
-  blockquote:before,
-  blockquote:after,
-  q:before,
-  q:after {
+  blockquote:before, blockquote:after,
+  q:before, q:after {
     content: '';
     content: none;
   }
@@ -133,62 +53,52 @@ export const reset = css`
     border-collapse: collapse;
     border-spacing: 0;
   }
-`;
+  
+  /* 위에가 styled-reset 내용 */
 
-export const GlobalStyle = createGlobalStyle`
-${reset}
-
-body, html {
-    width: 100%;
-    height:100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  * {
+    box-sizing: border-box;
+  } 
+  html {
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color:rgba(0, 0, 0, 0);
     
-    overflow: scroll;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
     scroll-behavior: smooth;
 
-  ::-webkit-scrollbar {
-  display: none;
+    font-family: sans-serif;
+    font-size: 62.5%;
+    user-select: none;    
+
   }
+  ul, li {
+    padding-left: 0rem;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  input, button {
+    outline: none; 
+    border: none;
+    background-color: transparent;
+  }
+  button {
+    cursor: pointer;
+    padding: 0;
+  }
+  input {
+    appearance: none;
     
-
-  font-size:62.5%
-
-   
-}
-
-#root{
-  width: 26.875rem;
-  height: 58.25rem;
-
-  overflow: scroll;
-  margin: auto;
-
-  scrollbar-width: none;
-    -ms-overflow-style: none;
-
-  }
-::-webkit-scrollbar {
-  display: none;
-}
-
-
-* {
-    box-sizing: border-box;
+    &:focus {
+      outline: none;
     }
-
-@font-face {
+  }
+  
+  @font-face {
     font-family: 'KOTRAHOPE';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/KOTRAHOPE.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
 }
 `;
-
-export default GlobalStyle;
