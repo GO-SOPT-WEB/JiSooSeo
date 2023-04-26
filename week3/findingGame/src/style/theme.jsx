@@ -13,10 +13,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     font-size: 2.625rem;
-    line-height: 1.4375rem;
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.07em;
   `,
   text: css`
@@ -24,10 +20,6 @@ const fonts = {
     font-style: normal;
     font-weight: 400;
     font-size: 1.25rem;
-    line-height: 1.4375rem;
-    display: flex;
-    align-items: center;
-    text-align: center;
     letter-spacing: 0.07em;
   `,
 };
