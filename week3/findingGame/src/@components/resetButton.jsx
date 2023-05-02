@@ -5,12 +5,12 @@ export default function ResetButton() {
 }
 
 const Button = styled.button`
-  position: absolute;
+  position: fixed;
   top: 2rem;
   right: 2rem;
 
   width: 10rem;
-  padding: 2rem;
+  padding: 1rem 2rem;
 
   border-radius: 1rem;
 

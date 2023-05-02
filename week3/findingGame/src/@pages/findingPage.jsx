@@ -3,8 +3,9 @@ import ResetButton from '../@components/resetButton';
 
 export default function findingPage() {
   return (
-  <>
-  <ResetButton/>
-  <MainHeader />
-  </>);
+    <>
+      <ResetButton />
+      <MainHeader />
+    </>
+  );
 }
