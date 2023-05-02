@@ -1,3 +1,4 @@
+import LevelButton from '../@components/levelButton';
 import MainHeader from '../@components/mainHeader';
 import ResetButton from '../@components/resetButton';
 
@@ -6,6 +7,7 @@ export default function findingPage() {
     <>
       <ResetButton />
       <MainHeader />
+      <LevelButton />
     </>
   );
 }
