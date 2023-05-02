@@ -19,7 +19,7 @@ const Header = styled.header`
   width: 100%;
   height: 10rem;
 
-  background-color: ${({ theme }) => theme.colors.blue};
+  background-color: ${({ theme }) => theme.colors.skyblue};
 `;
 const Title = styled.h1`
   ${({ theme }) => theme.fonts.title};
