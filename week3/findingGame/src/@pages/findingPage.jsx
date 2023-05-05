@@ -5,6 +5,7 @@ import ResetButton from '../@components/resetButton';
 import { CARDS_LIST } from '../core/cardsData';
 import { useEffect, useState } from 'react';
 import { levelType } from '../core/levelType';
+import styled from 'styled-components';
 
 export default function FindingPage() {
   const [copyCards, setCopyCards] = useState([]);
@@ -56,12 +57,25 @@ export default function FindingPage() {
     mixCards(level);
   }, [level, isReset]);
 
+  useEffect(() => {
+    console.log('찐' + level);
+  }, [level]);
+
   return (
     <>
       <ResetButton isReset={isReset} setIsReset={setIsReset} />
       <MainHeader level={level} correct={correct} />
-      <LevelButton level={level} setLevel={setLevel} />
-      <CardList cards={cards} setCorrect={setCorrect} />
+      <MainSectionWrapper>
+        <LevelButton level={level} setLevel={setLevel} />
+        <CardList cards={cards} setCorrect={setCorrect} />
+      </MainSectionWrapper>
     </>
   );
 }
+
+const MainSectionWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;

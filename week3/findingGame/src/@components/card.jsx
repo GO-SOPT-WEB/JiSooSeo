@@ -4,12 +4,26 @@ export default function Card(props) {
   const { img, name } = props;
 
   return (
-    <CardWrapper>
-      <CardImg src={img} alt={name} />
-    </CardWrapper>
+    <CardImgWrapper>
+      <Img src={img} alt={name} />
+    </CardImgWrapper>
   );
 }
 
-const CardWrapper = styled.article``;
+const CardImgWrapper = styled.article`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-const CardImg = styled.img``;
+  width: 20rem;
+  height: 22rem;
+  padding: 1rem;
+  margin: 1rem;
+
+  border-radius: 1rem;
+  background-color: ${({ theme }) => theme.colors.skyblue};
+`;
+
+const Img = styled.img`
+  width: 15rem;
+`;

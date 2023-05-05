@@ -9,13 +9,17 @@ export default function LevelButton(props) {
   }
   console.log(level);
   return (
-    <>
+    <ButtonWrapper>
       <Button onClick={() => changeLevel(levelType.EASY)}>easy</Button>
       <Button onClick={() => changeLevel(levelType.NORMAL)}>normal</Button>
       <Button onClick={() => changeLevel(levelType.HARD)}>hard</Button>
-    </>
+    </ButtonWrapper>
   );
 }
+
+const ButtonWrapper = styled.section`
+  display: flex;
+`;
 
 const Button = styled.button`
   width: 8rem;
