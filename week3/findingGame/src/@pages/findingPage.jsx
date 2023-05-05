@@ -46,7 +46,7 @@ export default function FindingPage() {
     setCards(realCardData);
   }
 
-  const [level, setLevel] = useState(0);
+  const [level, setLevel] = useState(levelType.EASY);
   const [correct, setCorrect] = useState(0);
 
   //맨처음 카드 깔기
@@ -73,7 +73,7 @@ export default function FindingPage() {
       <MainHeader level={level} correct={correct} />
       <MainSectionWrapper>
         <LevelButton level={level} setLevel={setLevel} />
-        <CardList cards={cards} setCorrect={setCorrect} />
+        <CardList level={level} cards={cards} setCorrect={setCorrect} />
       </MainSectionWrapper>
     </>
   );

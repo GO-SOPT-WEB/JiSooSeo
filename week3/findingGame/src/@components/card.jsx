@@ -2,21 +2,26 @@ import { useState } from 'react';
 import styled from 'styled-components';
 
 export default function Card(props) {
-  const { img, name } = props;
-  const [isReverse, setIsReverse] = useState(false);
+  const { idx, img, name, selectedIdx, setSelectedIdx, selectCards, setSelectCards } = props;
+  // const [isReverse, setIsReverse] = useState(false);
 
   function reverseCard() {
-    setIsReverse(true);
+    setSelectCards(
+      selectCards.map((selectCard) =>
+        selectCard.idx === idx ? { ...selectCard, selected: !selectCard.selected } : selectCard
+      )
+    );
+    setSelectedIdx((selectedIdx) => ({ ...selectedIdx, idx }));
   }
+  console.log(selectCards);
 
-  console.log(isReverse);
   return (
     <CardBoxWrapper onClick={reverseCard}>
-      <CardBox isReverse={isReverse}>
-        <CardImgFrontWrapper isReverse={isReverse}>
+      <CardBox isReverse={selectCards[idx].selected}>
+        <CardImgFrontWrapper isReverse={selectCards[idx].selected}>
           <Img src={img} alt={name} />
         </CardImgFrontWrapper>
-        <CardImgBackWrapper isReverse={isReverse}>
+        <CardImgBackWrapper isReverse={selectCards[idx].selected}>
           <i>🌊</i>
         </CardImgBackWrapper>
       </CardBox>
