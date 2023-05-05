@@ -14,6 +14,7 @@ export default function CardList(props) {
 
 const CardsContainer = styled.section`
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 
   width: 110rem;
