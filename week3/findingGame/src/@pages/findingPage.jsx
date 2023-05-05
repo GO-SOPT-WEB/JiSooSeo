@@ -46,7 +46,7 @@ export default function FindingPage() {
     setCards(realCardData);
   }
 
-  const [level, setLevel] = useState();
+  const [level, setLevel] = useState(0);
   const [correct, setCorrect] = useState(0);
 
   //맨처음 카드 깔기
