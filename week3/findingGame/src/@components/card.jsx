@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export default function Card(props) {
   const { idx, img, name, selectedIdx, setSelectedIdx, selectCards, setSelectCards } = props;
-  // const [isReverse, setIsReverse] = useState(false);
 
   function reverseCard() {
     if (selectedIdx.length < 2) {
@@ -14,9 +13,6 @@ export default function Card(props) {
       setSelectedIdx((selectedIdx) => [...selectedIdx, { idx }]);
     }
   }
-
-  console.log('배열');
-  console.log(selectedIdx);
 
   return (
     <CardBoxWrapper onClick={reverseCard}>
