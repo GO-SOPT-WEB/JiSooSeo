@@ -4,6 +4,7 @@ export default function LevelButton(props) {
   const { level, setLevel } = props;
 
   function changeLevel(levelType) {
+    console.log('dddd');
     setLevel(levelType);
   }
 

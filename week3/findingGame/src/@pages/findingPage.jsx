@@ -7,43 +7,43 @@ import { useEffect, useState } from 'react';
 import { levelType } from '../core/levelType';
 
 export default function FindingPage() {
+  const [copyCards, setCopyCards] = useState([]);
   const [cards, setCards] = useState([]);
-  // const [newCard, setNewCard] = useState({
-  //   id: '',
-  //   img: '',
-  // });
-  // const { id, img } = newCard;
 
   function mixCards(level) {
-    let randomNum = [];
+    setCopyCards([]);
     let newCardData = JSON.parse(JSON.stringify(CARDS_LIST)); //카드데이터 깊은 복사
 
     //1~9 수 중에서 level개만큼 랜덤 숫자 뽑기
+    let randomIndexArray = [];
     for (let i = 0; i < level; i++) {
-      randomNum.push(Math.floor(Math.random() * (8 - 0) + 0));
+      let randomNum = Math.floor(Math.random() * (8 - 0) + 0);
+      if (randomIndexArray.indexOf(randomNum) === -1) {
+        randomIndexArray.push(randomNum);
+      } else {
+        i--;
+      }
     }
 
-    // console.log(newCardData);
-    //랜덤 숫자와 같은 id를 가진 데이터 가져오기
-    //randomNum.forEach(() => cardData);
-    // for (let i = 0; i < randomNum.length; i++) {
-    //   console.log(newCardData);
-    //   //  cardData.filter((cardData.id)=>(cardData.id));
-
+    //랜덤 숫자의 인덱스에 해당하는 카드 정보 담기
     for (let i = 0; i < level; i++) {
-      console.log('level' + level);
-      console.log('randomNum' + randomNum);
-      setCards((cards) => [...cards, newCardData[randomNum[i]]]);
+      setCopyCards((copyCards) => [...copyCards, newCardData[randomIndexArray[i]]]);
     }
+
+    //복사한 카드를 2개씩 랜덤 순서로 담기
   }
 
-  console.log(cards);
+  console.log(copyCards);
   const [level, setLevel] = useState(levelType.EASY);
   const [correct, setCorrect] = useState(0);
 
   useEffect(() => {
     mixCards(level);
   }, []);
+
+  useEffect(() => {
+    mixCards(level);
+  }, [level]);
 
   return (
     <>
