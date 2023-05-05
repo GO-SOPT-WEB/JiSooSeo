@@ -17,14 +17,11 @@ export default function FindingPage() {
   const [onModal, setOnModal] = useState(false);
 
   function mixCards(level) {
-    console.log('들어옴1' + level);
     let newCardData = JSON.parse(JSON.stringify(CARDS_LIST)); //카드데이터 깊은 복사
 
     //1~9 수 중에서 level개만큼 랜덤 숫자 뽑기
     let randomIndexArray = [];
     for (let i = 0; i < level; i++) {
-      console.log('들어옴2');
-
       let randomNum = Math.floor(Math.random() * (9 - 0) + 0);
       if (randomIndexArray.indexOf(randomNum) === -1) {
         randomIndexArray.push(randomNum);
