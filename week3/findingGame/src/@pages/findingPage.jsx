@@ -6,6 +6,7 @@ import { CARDS_LIST } from '../core/cardsData';
 import { useEffect, useState } from 'react';
 import { levelType } from '../core/levelType';
 import styled from 'styled-components';
+import ModalFrame from '../@components/modal/modalFrame';
 
 export default function FindingPage() {
   const [copyCards, setCopyCards] = useState([]);
@@ -13,6 +14,7 @@ export default function FindingPage() {
   const [isReset, setIsReset] = useState(false);
   const [level, setLevel] = useState(levelType.EASY);
   const [correct, setCorrect] = useState(0);
+  const [onModal, setOnModal] = useState(false);
 
   function mixCards(level) {
     console.log('들어옴1' + level);
@@ -69,8 +71,9 @@ export default function FindingPage() {
 
   return (
     <>
+      {onModal && <ModalFrame setOnModal={setOnModal}>🌷축하합니다🌷</ModalFrame>}
       <ResetButton isReset={isReset} setIsReset={setIsReset} />
-      <MainHeader level={level} correct={correct} />
+      <MainHeader level={level} correct={correct} setOnModal={setOnModal} />
       <MainSectionWrapper>
         <LevelButton level={level} setLevel={setLevel} />
         <CardList

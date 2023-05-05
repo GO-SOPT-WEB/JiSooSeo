@@ -2,14 +2,19 @@ import { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
 export default function Score(props) {
-  const { level, correct } = props;
+  const { level, correct, setOnModal } = props;
   const [correctOneCard, setCorrectOneCard] = useState(false);
+
+  function checkAllCorrect() {
+    level === correct && setOnModal(true);
+  }
 
   useEffect(() => {
     correct !== 0 && setCorrectOneCard(true);
     setTimeout(() => {
       setCorrectOneCard(false);
     }, '2000');
+    checkAllCorrect();
   }, [correct]);
 
   return (
