@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 export default function Card(props) {
@@ -11,9 +11,8 @@ export default function Card(props) {
         selectCard.idx === idx ? { ...selectCard, selected: !selectCard.selected } : selectCard
       )
     );
-    setSelectedIdx((selectedIdx) => ({ ...selectedIdx, idx }));
+    setSelectedIdx((selectedIdx) => [...selectedIdx, { idx }]);
   }
-  console.log(selectCards);
 
   return (
     <CardBoxWrapper onClick={reverseCard}>

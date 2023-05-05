@@ -9,7 +9,7 @@ export default function CardList(props) {
   //카드 전체의 선택여부
   const [selectCards, setSelectCards] = useState(reverseCardEasy);
   //선택된 카드의 인덱스 두 개 담기는 배열
-  const [selectedIdx, setSelectedIdx] = useState();
+  const [selectedIdx, setSelectedIdx] = useState([]);
 
   useEffect(() => {
     switch (level) {
@@ -24,7 +24,6 @@ export default function CardList(props) {
         break;
       default:
         setSelectCards();
-        console.log('aaaaaa');
         break;
     }
   }, [level]);
@@ -32,8 +31,8 @@ export default function CardList(props) {
   //selectedIdx 변경될 때마다 길이 2이상인지 확인 후 ->
   //cards[idx] setCorrect로 높이기
   useEffect(() => {
-    // console.log(selectCards);
-    // console.log(selectedIdx);
+    console.log(selectCards);
+    console.log(selectedIdx);
   }, [selectCards]);
 
   return (
