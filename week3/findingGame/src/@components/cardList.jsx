@@ -5,7 +5,7 @@ import { levelType } from '../core/levelType';
 import { reverseCardEasy, reverseCardHard, reverseCardNormal } from '../core/reverseCard';
 
 export default function CardList(props) {
-  const { level, cards, correct, setCorrect } = props;
+  const { level, cards, correct, setCorrect, isReset } = props;
   //카드 전체의 선택여부
   const [selectCards, setSelectCards] = useState(reverseCardEasy);
   //선택된 카드의 인덱스 두 개 담기는 배열
@@ -27,6 +27,17 @@ export default function CardList(props) {
         break;
     }
   }, [level]);
+
+  //리셋한 경우 카드 다 뒤집기
+  useEffect(() => {
+    setSelectCards(
+      selectCards.map((selectCard) =>
+        selectCard.idx === 0
+          ? { ...selectCard, selected: false }
+          : { ...selectCard, selected: false }
+      )
+    );
+  }, [isReset]);
 
   function checkSameCards(selectedIdxLen) {
     const idx1 = selectedIdx[selectedIdxLen - 2].idx;

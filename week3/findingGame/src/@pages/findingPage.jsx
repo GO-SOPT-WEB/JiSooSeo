@@ -11,6 +11,8 @@ export default function FindingPage() {
   const [copyCards, setCopyCards] = useState([]);
   const [cards, setCards] = useState([]);
   const [isReset, setIsReset] = useState(false);
+  const [level, setLevel] = useState(levelType.EASY);
+  const [correct, setCorrect] = useState(0);
 
   function mixCards(level) {
     console.log('들어옴1' + level);
@@ -46,9 +48,6 @@ export default function FindingPage() {
     setCards(realCardData);
   }
 
-  const [level, setLevel] = useState(levelType.EASY);
-  const [correct, setCorrect] = useState(0);
-
   //맨처음 카드 깔기
   useEffect(() => {
     setLevel(levelType.EASY);
@@ -63,6 +62,7 @@ export default function FindingPage() {
   useEffect(() => {
     setCopyCards([]);
     setCards([]);
+    setCorrect(0);
 
     mixCards(level);
   }, [level, isReset]);
@@ -73,7 +73,13 @@ export default function FindingPage() {
       <MainHeader level={level} correct={correct} />
       <MainSectionWrapper>
         <LevelButton level={level} setLevel={setLevel} />
-        <CardList level={level} cards={cards} correct={correct} setCorrect={setCorrect} />
+        <CardList
+          level={level}
+          cards={cards}
+          correct={correct}
+          setCorrect={setCorrect}
+          isReset={isReset}
+        />
       </MainSectionWrapper>
     </>
   );
