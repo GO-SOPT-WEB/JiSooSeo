@@ -4,7 +4,7 @@ import MainHeader from '../@components/mainHeader';
 import ResetButton from '../@components/resetButton';
 import { CARDS_LIST } from '../core/cardsData';
 import { useEffect, useState } from 'react';
-// import { levelType } from '../core/levelType';
+import { levelType } from '../core/levelType';
 import styled from 'styled-components';
 
 export default function FindingPage() {
@@ -29,13 +29,13 @@ export default function FindingPage() {
       }
     }
 
-    console.log(randomIndexArray);
     //랜덤 숫자의 인덱스에 해당하는 카드 정보 담기
     for (let i = 0; i < level; i++) {
       setCopyCards((copyCards) => [...copyCards, newCardData[randomIndexArray[i]]]);
     }
+  }
 
-    //복사한 카드를 2개씩 랜덤 순서로 담기(완전복사)
+  function makeCardSet() {
     let realCardData = [];
     for (let i = 0; i < copyCards.length; i++) {
       realCardData.push(copyCards[i]);
@@ -46,16 +46,20 @@ export default function FindingPage() {
     setCards(realCardData);
   }
 
-  const [level, setLevel] = useState(0);
+  const [level, setLevel] = useState(levelType.EASY);
   const [correct, setCorrect] = useState(0);
 
+  //맨처음 카드 깔기
   useEffect(() => {
-    setCopyCards([]);
-    setCards([]);
-
     mixCards(level);
   }, []);
 
+  useEffect(() => {
+    //복사한 카드를 2개씩 랜덤 순서로 담기(완전복사)
+    makeCardSet();
+  }, [copyCards]);
+
+  //레벨 변경 시마다 카드 깔기
   useEffect(() => {
     setCopyCards([]);
     setCards([]);
@@ -63,11 +67,6 @@ export default function FindingPage() {
     mixCards(level);
   }, [level, isReset]);
 
-  useEffect(() => {
-    console.log('cads' + cards);
-  }, [cards]);
-
-  console.log(level);
   return (
     <>
       <ResetButton isReset={isReset} setIsReset={setIsReset} />
