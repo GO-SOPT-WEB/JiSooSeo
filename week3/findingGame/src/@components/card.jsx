@@ -1,9 +1,11 @@
 import styled from 'styled-components';
 
-export default function Card({ imgSrc, id }) {
+export default function Card(props) {
+  const { img, name } = props;
+
   return (
     <CardWrapper>
-      <CardImg src={imgSrc} alt={`잔망루피${id}`} />
+      <CardImg src={img} alt={name} />
     </CardWrapper>
   );
 }
