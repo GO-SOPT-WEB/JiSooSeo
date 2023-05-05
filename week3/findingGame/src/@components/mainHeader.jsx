@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 import Score from './score';
 
-export default function MainHeader() {
+export default function MainHeader(props) {
+  const { level, correct } = props;
+
   return (
     <Header>
       <Title>잔망루피를 찾아라!</Title>
-      <Score />
+      <Score level={level} correct={correct} />
     </Header>
   );
 }

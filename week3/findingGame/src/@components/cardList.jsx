@@ -1,5 +1,3 @@
-import React from 'react';
-
-export default function cardList() {
+export default function CardList() {
   return <div>cardList</div>;
 }

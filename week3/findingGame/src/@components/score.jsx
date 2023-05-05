@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export default function Score() {
-  return <ScoreText>/</ScoreText>;
+export default function Score(props) {
+  const { level, correct } = props;
+  return (
+    <ScoreText>
+      {correct}/{level}
+    </ScoreText>
+  );
 }
 
 const ScoreText = styled.p`
