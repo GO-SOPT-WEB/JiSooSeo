@@ -1,3 +1,4 @@
-export default function CardList() {
+export default function CardList(props) {
+  const { cards, setCorrect } = [props];
   return <div>cardList</div>;
 }

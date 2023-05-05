@@ -7,7 +7,7 @@ export default function LevelButton(props) {
     console.log('dddd');
     setLevel(levelType);
   }
-
+  console.log(level);
   return (
     <>
       <Button onClick={() => changeLevel(levelType.EASY)}>easy</Button>

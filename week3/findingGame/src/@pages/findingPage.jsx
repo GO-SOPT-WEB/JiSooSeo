@@ -9,9 +9,12 @@ import { levelType } from '../core/levelType';
 export default function FindingPage() {
   const [copyCards, setCopyCards] = useState([]);
   const [cards, setCards] = useState([]);
+  const [isReset, setIsReset] = useState(false);
 
   function mixCards(level) {
     setCopyCards([]);
+    setCards([]);
+
     let newCardData = JSON.parse(JSON.stringify(CARDS_LIST)); //카드데이터 깊은 복사
 
     //1~9 수 중에서 level개만큼 랜덤 숫자 뽑기
@@ -30,11 +33,19 @@ export default function FindingPage() {
       setCopyCards((copyCards) => [...copyCards, newCardData[randomIndexArray[i]]]);
     }
 
-    //복사한 카드를 2개씩 랜덤 순서로 담기
+    //복사한 카드를 2개씩 랜덤 순서로 담기(완전복사)
+    let realCardData = [];
+    for (let i = 0; i < copyCards.length; i++) {
+      realCardData.push(copyCards[i]);
+      realCardData.push(copyCards[i]);
+    }
+
+    realCardData.sort(() => Math.random() - 0.5);
+    console.log(realCardData);
+    setCards(realCardData);
   }
 
-  console.log(copyCards);
-  const [level, setLevel] = useState(levelType.EASY);
+  const [level, setLevel] = useState(levelType.NORMAL);
   const [correct, setCorrect] = useState(0);
 
   useEffect(() => {
@@ -43,14 +54,14 @@ export default function FindingPage() {
 
   useEffect(() => {
     mixCards(level);
-  }, [level]);
+  }, [level, isReset]);
 
   return (
     <>
-      <ResetButton />
+      <ResetButton isReset={isReset} setIsReset={setIsReset} />
       <MainHeader level={level} correct={correct} />
       <LevelButton level={level} setLevel={setLevel} />
-      <CardList />
+      <CardList cards={cards} setCorrect={setCorrect} />
     </>
   );
 }

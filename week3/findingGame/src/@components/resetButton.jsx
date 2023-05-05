@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 
-export default function ResetButton() {
-  return <Button>RESET</Button>;
+export default function ResetButton(props) {
+  const { isReset, setIsReset } = props;
+
+  function reset() {
+    setIsReset(!isReset);
+  }
+  return <Button onClick={reset}>RESET</Button>;
 }
 
 const Button = styled.button`
