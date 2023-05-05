@@ -29,9 +29,10 @@ export default function CardList(props) {
   }, [level]);
 
   function checkSameCards(selectedIdxLen) {
-    const idx1 = selectedIdx[selectedIdxLen - 1].idx;
-    const idx2 = selectedIdx[selectedIdxLen - 2].idx;
+    const idx1 = selectedIdx[selectedIdxLen - 2].idx;
+    const idx2 = selectedIdx[selectedIdxLen - 1].idx;
 
+    //카드 정보가 담긴 배열에서 이름이 동일하면 같은 카드
     if (cards[idx1].name == cards[idx2].name) {
       setCorrect(correct + 1);
       setSelectCards(
@@ -42,35 +43,28 @@ export default function CardList(props) {
         )
       );
     } else {
-      setSelectCards(
-        selectCards.map((selectCard) =>
-          selectCard.idx === idx1 || selectCard.idx === idx2
-            ? { ...selectCard, selected: false }
-            : selectCard
-        )
-      );
+      //다른 카드라면 1초 뒤 원상복귀
+      setTimeout(() => {
+        setSelectCards(
+          selectCards.map((selectCard) =>
+            selectCard.idx === idx1 || selectCard.idx === idx2
+              ? { ...selectCard, selected: false }
+              : selectCard
+          )
+        );
+      }, '1000');
     }
     setSelectedIdx([]);
   }
-  //selectedIdx 변경될 때마다 길이 2이상인지 확인 후 ->
-  //cards[idx] setCorrect로 높이기
-  useEffect(() => {
-    console.log('여기');
-    console.log(selectCards);
-    console.log(selectedIdx);
 
+  //selectedIdx 변경될 때마다 길이 2이상인지 확인
+  useEffect(() => {
     const selectedIdxLen = selectedIdx.length;
 
-    // setTimeout(() => {
-    //   console.log('Delayed for 1 second.');
-    // }, '1000');
-
-    if (selectedIdxLen >= 2) {
+    if (selectedIdxLen === 2) {
       checkSameCards(selectedIdxLen);
     }
   }, [selectCards]);
-
-  console.log(cards);
 
   return (
     <CardsContainer>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 export default function Card(props) {
@@ -6,13 +5,18 @@ export default function Card(props) {
   // const [isReverse, setIsReverse] = useState(false);
 
   function reverseCard() {
-    setSelectCards(
-      selectCards.map((selectCard) =>
-        selectCard.idx === idx ? { ...selectCard, selected: !selectCard.selected } : selectCard
-      )
-    );
-    setSelectedIdx((selectedIdx) => [...selectedIdx, { idx }]);
+    if (selectedIdx.length < 2) {
+      setSelectCards(
+        selectCards.map((selectCard) =>
+          selectCard.idx === idx ? { ...selectCard, selected: !selectCard.selected } : selectCard
+        )
+      );
+      setSelectedIdx((selectedIdx) => [...selectedIdx, { idx }]);
+    }
   }
+
+  console.log('배열');
+  console.log(selectedIdx);
 
   return (
     <CardBoxWrapper onClick={reverseCard}>
