@@ -67,11 +67,6 @@ export default function FindingPage() {
     mixCards(level);
   }, [level, isReset]);
 
-  useEffect(() => {
-    setCopyCards([]);
-    setCards([]);
-  }, [isReset]);
-
   return (
     <>
       <ResetButton isReset={isReset} setIsReset={setIsReset} />
