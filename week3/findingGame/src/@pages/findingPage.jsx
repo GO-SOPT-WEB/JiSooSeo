@@ -46,12 +46,12 @@ export default function FindingPage() {
     setCards(realCardData);
   }
 
-  const [level, setLevel] = useState(levelType.EASY);
+  const [level, setLevel] = useState();
   const [correct, setCorrect] = useState(0);
 
   //맨처음 카드 깔기
   useEffect(() => {
-    mixCards(level);
+    setLevel(levelType.EASY);
   }, []);
 
   useEffect(() => {
