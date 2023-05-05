@@ -73,7 +73,7 @@ export default function FindingPage() {
       <MainHeader level={level} correct={correct} />
       <MainSectionWrapper>
         <LevelButton level={level} setLevel={setLevel} />
-        <CardList level={level} cards={cards} setCorrect={setCorrect} />
+        <CardList level={level} cards={cards} correct={correct} setCorrect={setCorrect} />
       </MainSectionWrapper>
     </>
   );

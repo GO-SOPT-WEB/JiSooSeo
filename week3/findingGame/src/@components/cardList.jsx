@@ -5,7 +5,7 @@ import { levelType } from '../core/levelType';
 import { reverseCardEasy, reverseCardHard, reverseCardNormal } from '../core/reverseCard';
 
 export default function CardList(props) {
-  const { level, cards, setCorrect } = props;
+  const { level, cards, correct, setCorrect } = props;
   //카드 전체의 선택여부
   const [selectCards, setSelectCards] = useState(reverseCardEasy);
   //선택된 카드의 인덱스 두 개 담기는 배열
@@ -28,12 +28,49 @@ export default function CardList(props) {
     }
   }, [level]);
 
+  function checkSameCards(selectedIdxLen) {
+    const idx1 = selectedIdx[selectedIdxLen - 1].idx;
+    const idx2 = selectedIdx[selectedIdxLen - 2].idx;
+
+    if (cards[idx1].name == cards[idx2].name) {
+      setCorrect(correct + 1);
+      setSelectCards(
+        selectCards.map((selectCard) =>
+          selectCard.idx === idx1 || selectCard.idx === idx2
+            ? { ...selectCard, selected: true }
+            : selectCard
+        )
+      );
+    } else {
+      setSelectCards(
+        selectCards.map((selectCard) =>
+          selectCard.idx === idx1 || selectCard.idx === idx2
+            ? { ...selectCard, selected: false }
+            : selectCard
+        )
+      );
+    }
+    setSelectedIdx([]);
+  }
   //selectedIdx 변경될 때마다 길이 2이상인지 확인 후 ->
   //cards[idx] setCorrect로 높이기
   useEffect(() => {
+    console.log('여기');
     console.log(selectCards);
     console.log(selectedIdx);
+
+    const selectedIdxLen = selectedIdx.length;
+
+    // setTimeout(() => {
+    //   console.log('Delayed for 1 second.');
+    // }, '1000');
+
+    if (selectedIdxLen >= 2) {
+      checkSameCards(selectedIdxLen);
+    }
   }, [selectCards]);
+
+  console.log(cards);
 
   return (
     <CardsContainer>
