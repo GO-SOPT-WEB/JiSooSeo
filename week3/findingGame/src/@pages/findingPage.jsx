@@ -4,7 +4,7 @@ import MainHeader from '../@components/mainHeader';
 import ResetButton from '../@components/resetButton';
 import { CARDS_LIST } from '../core/cardsData';
 import { useEffect, useState } from 'react';
-import { levelType } from '../core/levelType';
+// import { levelType } from '../core/levelType';
 import styled from 'styled-components';
 
 export default function FindingPage() {
@@ -13,15 +13,15 @@ export default function FindingPage() {
   const [isReset, setIsReset] = useState(false);
 
   function mixCards(level) {
-    setCopyCards([]);
-    setCards([]);
-
+    console.log('들어옴1' + level);
     let newCardData = JSON.parse(JSON.stringify(CARDS_LIST)); //카드데이터 깊은 복사
 
     //1~9 수 중에서 level개만큼 랜덤 숫자 뽑기
     let randomIndexArray = [];
     for (let i = 0; i < level; i++) {
-      let randomNum = Math.floor(Math.random() * (8 - 0) + 0);
+      console.log('들어옴2');
+
+      let randomNum = Math.floor(Math.random() * (9 - 0) + 0);
       if (randomIndexArray.indexOf(randomNum) === -1) {
         randomIndexArray.push(randomNum);
       } else {
@@ -29,6 +29,7 @@ export default function FindingPage() {
       }
     }
 
+    console.log(randomIndexArray);
     //랜덤 숫자의 인덱스에 해당하는 카드 정보 담기
     for (let i = 0; i < level; i++) {
       setCopyCards((copyCards) => [...copyCards, newCardData[randomIndexArray[i]]]);
@@ -42,25 +43,31 @@ export default function FindingPage() {
     }
 
     realCardData.sort(() => Math.random() - 0.5);
-    console.log(realCardData);
     setCards(realCardData);
   }
 
-  const [level, setLevel] = useState(levelType.NORMAL);
+  const [level, setLevel] = useState(0);
   const [correct, setCorrect] = useState(0);
 
   useEffect(() => {
+    setCopyCards([]);
+    setCards([]);
+
     mixCards(level);
   }, []);
 
   useEffect(() => {
+    setCopyCards([]);
+    setCards([]);
+
     mixCards(level);
   }, [level, isReset]);
 
   useEffect(() => {
-    console.log('찐' + level);
-  }, [level]);
+    console.log('cads' + cards);
+  }, [cards]);
 
+  console.log(level);
   return (
     <>
       <ResetButton isReset={isReset} setIsReset={setIsReset} />

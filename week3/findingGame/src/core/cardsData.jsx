@@ -35,4 +35,8 @@ export const CARDS_LIST = [
     name: '잔망루피',
     img: 'https://item.kakaocdn.net/do/1d495862f49c38232ca8b6cc6a9679a0effd194bae87d73dd00522794070855d',
   },
+  {
+    name: '배고파루피',
+    img: 'https://item.kakaocdn.net/do/d6ac539d04d3aaf4a22186c23dd33ca67154249a3890514a43687a85e6b6cc82',
+  },
 ];

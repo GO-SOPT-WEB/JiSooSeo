@@ -1,13 +1,14 @@
 import styled from 'styled-components';
 import { levelType } from '../core/levelType';
+
 export default function LevelButton(props) {
   const { level, setLevel } = props;
 
   function changeLevel(levelType) {
-    console.log('dddd');
+    console.log('levelType' + level);
     setLevel(levelType);
   }
-  console.log(level);
+
   return (
     <ButtonWrapper>
       <Button onClick={() => changeLevel(levelType.EASY)}>easy</Button>
