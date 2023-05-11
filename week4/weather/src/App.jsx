@@ -5,8 +5,6 @@ import "./App.css";
 import weatherPage from "./@pages/weatherPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return <weatherPage />;
 }
 
