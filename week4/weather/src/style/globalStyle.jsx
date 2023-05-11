@@ -36,7 +36,7 @@ export const GlobalStyle = createGlobalStyle`
     display: block;
     touch-action: manipulation;
     line-height: 1;
-    background-color: #bf2420;
+    background-color: #E9F3FF;
 
   }
   menu, ol, ul {

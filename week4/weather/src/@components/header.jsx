@@ -17,7 +17,7 @@ const HeaderWrapper = styled.header`
   width: 100%;
   padding: 2rem;
 
-  background-color: ${({ theme }) => theme.colors.skyblue};
+  background-color: ${({ theme }) => theme.colors.blue};
 `;
 
 const Title = styled.h1`
