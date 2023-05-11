@@ -1,11 +1,17 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-import weatherPage from "./@pages/weatherPage";
+import Router from "./Router";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle } from "./style/globalStyle";
+import { theme } from "./style/theme";
 
 function App() {
-  return <weatherPage />;
+  return (
+    <>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <Router />
+      </ThemeProvider>
+    </>
+  );
 }
 
 export default App;
