@@ -21,5 +21,5 @@ export default function DetailWeatherInfo() {
     fetchTodayWeatehrInfo();
   }, [area]);
 
-  return <WeatherCard weatherData={weatherData} name={weatherData.name} />;
+  return <WeatherCard weatherData={weatherData} title={weatherData.name} />;
 }
