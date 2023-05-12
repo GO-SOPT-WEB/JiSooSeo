@@ -9,12 +9,6 @@ import ErrorPage from "../@pages/errorPage";
 export default function DetailWeatherInfo() {
   const { area } = useParams();
   const { fetchTodayWeatherInfo, isError, todayData } = useWeather();
-  // const [weatherData, setWeatherData] = useState([]);
-
-  // async function fetchTodayWeatherInfo() {
-  //   const response = await getTodayWeather(area);
-  //   setWeatherData(response);
-  // }
 
   useEffect(() => {
     fetchTodayWeatherInfo(area);
