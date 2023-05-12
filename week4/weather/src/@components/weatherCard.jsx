@@ -15,7 +15,7 @@ export default function WeatherCard(props) {
   return (
     <WeatherCardWrapper>
       <h1>{title}</h1>
-      <img src={weatherImg} alt={name} />
+      <img src={weatherImg} alt={title} />
       <p>온도 | {main?.temp}</p>
       <p>체감 온도 | {main?.feels_like}</p>
       <p>

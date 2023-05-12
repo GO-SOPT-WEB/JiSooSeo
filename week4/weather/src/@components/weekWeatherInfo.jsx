@@ -21,13 +21,11 @@ export default function WeekWeatherInfo() {
     fetchWeekWeatherInfo();
   }, [area]);
 
-  // console.log(weatherDatas);
-
   return (
     <CardWrapper>
       {weatherDatas.map(
-        (weatherData) => (
-          <WeatherCard weatherData={weatherData} title={weatherData.dt_txt} />
+        (weatherData, i) => (
+          <WeatherCard key={i} weatherData={weatherData} title={weatherData.dt_txt.split(" ")[0]} />
         ),
         // console.log(weatherData),
       )}
