@@ -16,30 +16,30 @@ const SkeletonWrapper = styled.article`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  margin: 1rem;
-  padding: 2rem;
 `;
 
 const Title = styled.h1`
-  width: 10rem;
+  width: 23rem;
   height: 3rem;
 
+  margin: 0.5rem;
   border-radius: 1rem;
   background-color: ${({ theme }) => theme.colors.grey};
 `;
 
 const Img = styled.img`
-  width: 10rem;
-  height: 10rem;
+  width: 23rem;
+  height: 20rem;
 
   border-radius: 1rem;
   background-color: ${({ theme }) => theme.colors.grey};
 `;
 
 const Text = styled.p`
-  width: 10rem;
-  height: 5rem;
+  width: 23rem;
+  height: 7rem;
+
+  margin: 0.5rem;
 
   border-radius: 1rem;
   background-color: ${({ theme }) => theme.colors.grey};
