@@ -33,6 +33,7 @@ const WeatherCardWrapper = styled.article`
   justify-content: center;
   align-items: center;
 
+  margin: 1rem;
   padding: 2rem;
 
   border: 0.3rem solid ${({ theme }) => theme.colors.blue};
