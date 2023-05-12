@@ -25,7 +25,7 @@ const SkeletonBoxWrapper = styled.section`
   width: 28rem;
   height: 40rem;
 
-  margin-top: 1rem;
+  margin: 1rem;
 
   background-color: #ddd;
   border-radius: 1rem;

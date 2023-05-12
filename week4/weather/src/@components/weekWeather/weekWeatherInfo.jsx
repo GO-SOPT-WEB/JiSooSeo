@@ -4,10 +4,11 @@ import WeatherCard from "../common/weatherCard";
 import { styled } from "styled-components";
 import useWeather from "../../hooks/useWeather";
 import ErrorPage from "../../@pages/errorPage";
+import SkeletonTemplate from "../skeleton/skeletonTemplate";
 
 export default function WeekWeatherInfo() {
   const { area } = useParams();
-  const { fetchWeekWeatherInfo, isError, weekDatas } = useWeather();
+  const { fetchWeekWeatherInfo, isError, weekDatas, isLoading } = useWeather();
 
   useEffect(() => {
     fetchWeekWeatherInfo(area);
@@ -24,7 +25,13 @@ export default function WeekWeatherInfo() {
   return (
     <CardWrapper>
       {weekDatas.list?.slice(0, 5).map((weatherData, i) => (
-        <WeatherCard key={i} weatherData={weatherData} title={weatherData?.dt_txt?.split(" ")[0]} />
+        <>
+          {isLoading ? (
+            <SkeletonTemplate />
+          ) : (
+            <WeatherCard key={i} weatherData={weatherData} title={weatherData?.dt_txt?.split(" ")[0]} />
+          )}
+        </>
       ))}
     </CardWrapper>
   );
