@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import PageLayout from "../@components/common/pageLayout";
 import { Outlet, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
-import Skeleton from "../@components/skeleton/skeleton";
+import Skeleton from "../@components/skeleton/skeletonTemplate";
+import SkeletonTemplate from "../@components/skeleton/skeletonTemplate";
 
 export default function WeatherPage() {
   const [dayOption, setDayOption] = useState("day");
@@ -33,7 +34,6 @@ export default function WeatherPage() {
           날씨 검색
         </Button>
       </DropBox>
-      <Skeleton />
       <Outlet />
     </PageLayout>
   );

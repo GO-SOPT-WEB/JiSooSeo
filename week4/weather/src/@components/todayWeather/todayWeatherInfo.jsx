@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import WeatherCard from "../common/weatherCard";
 import useWeather from "../../hooks/useWeather";
 import ErrorPage from "../../@pages/errorPage";
+import SkeletonTemplate from "../skeleton/skeletonTemplate";
 
 export default function DetailWeatherInfo() {
   const { area } = useParams();
-  const { fetchTodayWeatherInfo, isError, todayData } = useWeather();
+  const { fetchTodayWeatherInfo, isError, todayData, isLoading } = useWeather();
 
   useEffect(() => {
     fetchTodayWeatherInfo(area);
@@ -20,5 +21,5 @@ export default function DetailWeatherInfo() {
     return <ErrorPage />;
   }
 
-  return <WeatherCard weatherData={todayData} title={todayData.name} />;
+  return <>{isLoading ? <SkeletonTemplate /> : <WeatherCard weatherData={todayData} title={todayData.name} />}</>;
 }
