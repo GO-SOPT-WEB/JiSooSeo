@@ -18,9 +18,8 @@ export default function DetailWeatherInfo() {
   }, []);
 
   useEffect(() => {
-    console.log(area);
     fetchTodayWeatehrInfo();
   }, [area]);
 
-  return <WeatherCard weatherData={weatherData} />;
+  return <WeatherCard weatherData={weatherData} name={weatherData.name} />;
 }

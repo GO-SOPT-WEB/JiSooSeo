@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getWeekWeather } from "../api/getWeather";
+import WeatherCard from "./weatherCard";
 
 export default function WeekWeatherInfo() {
   const { area } = useParams();
-  const [weatherData, setWeatherData] = useState([]);
-  const [weatherImg, setWeatherImg] = useState("");
+  const [weatherDatas, setWeatherDatas] = useState([]);
 
   async function fetchWeekWeatherInfo() {
     const response = await getWeekWeather(area);
-    setWeatherData(response.list);
+    setWeatherDatas(response.list);
   }
 
   useEffect(() => {
@@ -20,13 +20,16 @@ export default function WeekWeatherInfo() {
     fetchWeekWeatherInfo();
   }, [area]);
 
-  console.log(weatherData);
+  console.log(weatherDatas);
 
-  // useEffect(() => {
-  //   weatherData?.weather &&
-  //     setWeatherImg(WEATHER_TYPE.filter((w) => w.description === weatherData?.weather[0].description)[0].imgURL);
-  // }, [weatherData]);
-
-  // return <WeatherCard weatherData={weatherData} weatherImg={weatherImg} />;
-  return <></>;
+  return (
+    <>
+      {weatherDatas.map(
+        (weatherData) => (
+          <WeatherCard weatherData={weatherData} name={name} />
+        ),
+        // console.log(weatherData),
+      )}
+    </>
+  );
 }

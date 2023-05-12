@@ -3,10 +3,11 @@ import { styled } from "styled-components";
 import { WEATHER_TYPE } from "../core/weatherImg";
 
 export default function WeatherCard(props) {
-  const { weatherData } = props;
-  const { name, main, clouds } = weatherData;
+  const { weatherData, name } = props;
+  const { main, clouds } = weatherData;
   const [weatherImg, setWeatherImg] = useState("");
 
+  //   console.log(weatherData);
   useEffect(() => {
     weatherData?.weather &&
       setWeatherImg(WEATHER_TYPE.filter((w) => w.description === weatherData?.weather[0].description)[0].imgURL);
