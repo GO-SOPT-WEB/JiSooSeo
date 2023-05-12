@@ -20,7 +20,7 @@ const fonts = {
     font-family: "KOTRAHOPE";
     font-style: normal;
     font-weight: 700;
-    font-size: 4rem;
+    font-size: 2.5rem;
     letter-spacing: 0.07em;
   `,
   text: css`

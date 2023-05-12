@@ -21,7 +21,7 @@ const HeaderWrapper = styled.header`
 `;
 
 const Title = styled.h1`
-  ${({ theme }) => theme.fonts.title};
+  ${({ theme }) => theme.fonts.header};
   color: ${({ theme }) => theme.colors.black};
   cursor: pointer;
 `;
