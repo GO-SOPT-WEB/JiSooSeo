@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../@components/header";
 import PageLayout from "../@components/pageLayout";
 import { Outlet } from "react-router-dom";
 import { styled } from "styled-components";
 
 export default function WeatherPage() {
+  const [dayOption, setDayOption] = useState();
+  const [city, setCity] = useState();
+
+  function getDayOption(e) {
+    setDayOption(e.target.value);
+  }
+
+  function getCity(e) {
+    setCity(e.target.value);
+  }
+
   return (
     <PageLayout>
       <DropBox>
-        <Select name="weather">
+        <Select name="weather" onChange={getDayOption}>
           <option value="today">오늘</option>
           <option value="week">주간</option>
         </Select>
-        <Input type="text" placeholder="영어로 도시명 ex) Seoul" />
+        <Input type="text" placeholder="영어로 도시명 ex) Seoul" onChange={getCity} />
         <Button type="button">날씨 검색</Button>
       </DropBox>
       <Outlet />
