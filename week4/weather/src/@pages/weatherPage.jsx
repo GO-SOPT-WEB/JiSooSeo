@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Header from "../@components/header";
 import PageLayout from "../@components/pageLayout";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
 
 export default function WeatherPage() {
-  const [dayOption, setDayOption] = useState();
+  const [dayOption, setDayOption] = useState("day");
   const [city, setCity] = useState();
+  const navigate = useNavigate();
 
   function getDayOption(e) {
     setDayOption(e.target.value);
@@ -16,15 +17,21 @@ export default function WeatherPage() {
     setCity(e.target.value);
   }
 
+  function searchWeather() {
+    navigate(`/${dayOption}/${city}`);
+  }
+
   return (
     <PageLayout>
       <DropBox>
         <Select name="weather" onChange={getDayOption}>
-          <option value="today">오늘</option>
+          <option value="day">오늘</option>
           <option value="week">주간</option>
         </Select>
         <Input type="text" placeholder="영어로 도시명 ex) Seoul" onChange={getCity} />
-        <Button type="button">날씨 검색</Button>
+        <Button type="button" onClick={searchWeather}>
+          날씨 검색
+        </Button>
       </DropBox>
       <Outlet />
     </PageLayout>
