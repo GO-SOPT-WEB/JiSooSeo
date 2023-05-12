@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getWeekWeather } from "../api/getWeather";
-import WeatherCard from "./weatherCard";
+import WeatherCard from "../common/weatherCard";
 import { styled } from "styled-components";
 import useWeather from "../hooks/useWeather";
 import ErrorPage from "../@pages/errorPage";

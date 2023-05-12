@@ -3,6 +3,7 @@ import Header from "../@components/header";
 import PageLayout from "../@components/pageLayout";
 import { Outlet, useNavigate } from "react-router-dom";
 import { styled } from "styled-components";
+import Skeleton from "../@components/skeleton/skeleton";
 
 export default function WeatherPage() {
   const [dayOption, setDayOption] = useState("day");
@@ -32,6 +33,7 @@ export default function WeatherPage() {
         <Button type="button" onClick={searchWeather}>
           날씨 검색
         </Button>
+        <Skeleton />
       </DropBox>
       <Outlet />
     </PageLayout>

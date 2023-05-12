@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getTodayWeather } from "../api/getWeather";
-import WeatherCard from "./weatherCard";
-import { WEATHER_TYPE } from "../core/weatherImg";
-import useWeather from "../hooks/useWeather";
-import ErrorPage from "../@pages/errorPage";
+import { getTodayWeather } from "../../api/getWeather";
+import WeatherCard from "../common/weatherCard";
+import { WEATHER_TYPE } from "../../core/weatherImg";
+import useWeather from "../../hooks/useWeather";
+import ErrorPage from "../../@pages/errorPage";
 
 export default function DetailWeatherInfo() {
   const { area } = useParams();

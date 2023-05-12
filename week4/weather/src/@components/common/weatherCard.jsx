@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { styled } from "styled-components";
-import { WEATHER_TYPE } from "../core/weatherImg";
+import { WEATHER_TYPE } from "../../core/weatherImg";
 
 export default function WeatherCard(props) {
   const { weatherData, title } = props;
