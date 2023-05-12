@@ -23,7 +23,7 @@ export default function WeekWeatherInfo() {
 
   return (
     <CardWrapper>
-      {weatherDatas.map((weatherData, i) => (
+      {weatherDatas.slice(0, 5).map((weatherData, i) => (
         <WeatherCard key={i} weatherData={weatherData} title={weatherData.dt_txt.split(" ")[0]} />
       ))}
     </CardWrapper>
