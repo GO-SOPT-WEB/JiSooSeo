@@ -8,17 +8,17 @@ export default function DetailWeatherInfo() {
   const { area } = useParams();
   const [weatherData, setWeatherData] = useState([]);
 
-  async function fetchTodayWeatehrInfo() {
+  async function fetchTodayWeatherInfo() {
     const response = await getTodayWeather(area);
     setWeatherData(response);
   }
 
   useEffect(() => {
-    fetchTodayWeatehrInfo();
+    fetchTodayWeatherInfo();
   }, []);
 
   useEffect(() => {
-    fetchTodayWeatehrInfo();
+    fetchTodayWeatherInfo();
   }, [area]);
 
   return <WeatherCard weatherData={weatherData} title={weatherData.name} />;
