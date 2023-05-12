@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useQuery } from "react-query";
 import { getTodayWeather, getWeekWeather } from "../api/getWeather";
 
 export default function useWeather() {
   const [todayData, setTodayData] = useState([]);
-  const [weekData, setWeekData] = useState([]);
+  const [weekDatas, setWeekDatas] = useState([]);
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,11 +23,11 @@ export default function useWeather() {
       setIsLoading(true);
       const response = await getWeekWeather(area);
       setIsLoading(false);
-      setWeekData(response);
+      setWeekDatas(response);
     } catch (e) {
       setIsError(true);
     }
   }
 
-  return { fetchTodayWeatherInfo, fetchWeekWeatherInfo, isError, isLoading, todayData, weekData };
+  return { fetchTodayWeatherInfo, fetchWeekWeatherInfo, isError, isLoading, todayData, weekDatas };
 }

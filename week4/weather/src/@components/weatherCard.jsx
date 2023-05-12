@@ -9,7 +9,7 @@ export default function WeatherCard(props) {
 
   useEffect(() => {
     weatherData?.weather &&
-      setWeatherImg(WEATHER_TYPE.filter((w) => w.description === weatherData?.weather[0].description)[0].imgURL);
+      setWeatherImg(WEATHER_TYPE.filter((w) => w.description === weatherData?.weather[0]?.description)[0]?.imgURL);
   }, [weatherData]);
 
   return (

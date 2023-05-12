@@ -3,28 +3,29 @@ import { useParams } from "react-router-dom";
 import { getWeekWeather } from "../api/getWeather";
 import WeatherCard from "./weatherCard";
 import { styled } from "styled-components";
+import useWeather from "../hooks/useWeather";
+import ErrorPage from "../@pages/errorPage";
 
 export default function WeekWeatherInfo() {
   const { area } = useParams();
-  const [weatherDatas, setWeatherDatas] = useState([]);
-
-  async function fetchWeekWeatherInfo() {
-    const response = await getWeekWeather(area);
-    setWeatherDatas(response.list);
-  }
+  const { fetchWeekWeatherInfo, isError, weekDatas } = useWeather();
 
   useEffect(() => {
-    fetchWeekWeatherInfo();
+    fetchWeekWeatherInfo(area);
   }, []);
 
   useEffect(() => {
-    fetchWeekWeatherInfo();
+    fetchWeekWeatherInfo(area);
   }, [area]);
+
+  if (isError) {
+    return <ErrorPage />;
+  }
 
   return (
     <CardWrapper>
-      {weatherDatas.slice(0, 5).map((weatherData, i) => (
-        <WeatherCard key={i} weatherData={weatherData} title={weatherData.dt_txt.split(" ")[0]} />
+      {weekDatas.list?.slice(0, 5).map((weatherData, i) => (
+        <WeatherCard key={i} weatherData={weatherData} title={weatherData?.dt_txt?.split(" ")[0]} />
       ))}
     </CardWrapper>
   );
