@@ -1,142 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>todomate</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header mobile">🌷 WEB TO DO MATE 🌷</header>
     <main class="main mobile">
-        <section class="calendar">
-            <div class="calendar__column">
-                <p class="calendar__column--days">월</p>
-                <p class="calendar__column--days">화</p>
-                <p class="calendar__column--days">수</p>
-                <p class="calendar__column--days">목</p>
-                <p class="calendar__column--days">금</p>
-                <p class="calendar__column--days">토</p>
-                <p class="calendar__column--days">일</p>
-            </div>
-            <ul class="calendar__column">
-                <li>
-                    <i class="calendar__column--to--do--list">7</i>
-                    <p class="calendar__column--date">3</p>
-                </li>
-                <li>
-                    <i class="calendar__column--to--do--list">8</i>
-                    <p class="calendar__column--date">4</p>
-                </li>
-                    <li>
-                    <i class="calendar__column--to--do--list">6</i>
-                    <p class="calendar__column--date">5</p>
-                </li>
-                    <li>
-                    <i class="calendar__column--to--do--list">6</i>
-                    <p class="calendar__column--date">6</p>
-                </li>
-                    <li>
-                    <i class="calendar__column--to--do--list">7</i>
-                    <p class="calendar__column--date">7</p>
-                </li>
-                    <li>
-                    <i class="calendar__column--to--do--list">9</i>
-                    <p class="calendar__column--date">8</p>
-                </li>
-                    <li>
-                    <i class="calendar__column--to--do--list">10</i>
-                    <p class="calendar__column--date">9</p>
-                </li>
-            </ul>
-            <!-- <div class="calendar__column">
-                <p class="calendar__column--date">3</p>
-                <p class="calendar__column--date">4</p>
-                <p class="calendar__column--date">5</p>
-                <p class="calendar__column--date">6</p>
-                <p class="calendar__column--date">7</p>
-                <p class="calendar__column--date">8</p>
-                <p class="calendar__column--date">9</p>
-            </div> -->
-        </section>
-        <section class="lists">
-            <article class="list">
-                <header class="list__header">SOPT<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="sopt__input-text1">🎁 </label><input type="checkbox" id="sopt__input-text1"/><p class="list__column__text">해삐🌼웹팟 세미나</p></li>
-                    <li class="list__column"><label for="sopt__input-text2">🎁</label><input type="checkbox" id="sopt__input-text2"/><p class="list__column__text">금잔디 코드리뷰</p></li>
-                    <li class="list__column"><label for="sopt__input-text3">🎁</label><input type="checkbox" id="sopt__input-text3"/><p class="list__column__text">아티클스터디 아티클</p></li>
-                    <li class="list__column"><label for="sopt__input-text4">🎁</label><input type="checkbox" id="sopt__input-text4"/><p class="list__column__text">js스터디 아티클</p></li>
-                    <li class="list__column"><label for="sopt__input-text5">🎁</label><input type="checkbox" id="sopt__input-text5"/><p class="list__column__text">Track1 개발</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">CAU<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="cau__input-text1">🎁 </label><input type="checkbox" id="cau__input-text1"/><p class="list__column__text">한자 문제 제작 과제</p></li>
-                    <li class="list__column"><label for="cau__input-text2">🎁 </label><input type="checkbox" id="cau__input-text2"/><p class="list__column__text">한자 필사 과제</p></li>
-                    <li class="list__column"><label for="cau__input-text3">🎁 </label><input type="checkbox" id="cau__input-text3"/><p class="list__column__text">강의 수강</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">ROUTINE<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="routine__input-text1">🎁 </label><input type="checkbox" id="routine__input-text1"/><p class="list__column__text">필라테스</p></li>
-                    <li class="list__column"><label for="routine__input-text2">🎁 </label><input type="checkbox" id="routine__input-text2"/><p class="list__column__text">독서</p></li>
-                    <li class="list__column"><label for="routine__input-text3">🎁 </label><input type="checkbox" id="routine__input-text3"/><p class="list__column__text">1일1커밋</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">ETC<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="etc__input-text1">🎁 </label><input type="checkbox" id="etc__input-text1"/><p class="list__column__text">마스크 주문하기</p></li>
-                    <li class="list__column"><label for="etc__input-text2">🎁 </label><input type="checkbox" id="etc__input-text2"/><p class="list__column__text">당근 택배부치기</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">FRIENDS<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="friends__input-text1">🎁 </label><input type="checkbox" id="friends__input-text1"/><p class="list__column__text">버즈 생일 챙기기</p></li>
-                    <li class="list__column"><label for="friends__input-text2">🎁 </label><input type="checkbox" id="friends__input-text2"/><p class="list__column__text">Track1 릴리즈 기념 인형 만들기</p></li>
-                    <li class="list__column"><label for="friends__input-text3">🎁 </label><input type="checkbox" id="friends__input-text3"/><p class="list__column__text">아티클스터디 아티클</p></li>
-                    <li class="list__column"><label for="friends__input-text4">🎁 </label><input type="checkbox" id="friends__input-text4"/><p class="list__column__text">js스터디 아티클</p></li>
-                    <li class="list__column"><label for="friends__input-text5">🎁 </label><input type="checkbox" id="friends__input-text5"/><p class="list__column__text">Track1 개발</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">CLEAN<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="clean__input-text1">🎁 </label><input type="checkbox" id="clean__input-text1"/><p class="list__column__text">청소</p></li>
-                    <li class="list__column"><label for="clean__input-text2">🎁 </label><input type="checkbox" id="clean__input-text2"/><p class="list__column__text">빨래</p></li>
-                    <li class="list__column"><label for="clean__input-text3">🎁 </label><input type="checkbox" id="clean__input-text3"/><p class="list__column__text">환기</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">MEETING<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="meeting__input-text1">🎁 </label><input type="checkbox" id="meeting__input-text1"/><p class="list__column__text">스타트업 서핑 킥오프</p></li>
-                    <li class="list__column"><label for="meeting__input-text2">🎁 </label><input type="checkbox" id="meeting__input-text2"/><p class="list__column__text">Track1 코어타임</p></li>
-                </ul>
-            </article>
-            <article class="list">
-                <header class="list__header">PLAY<i class="list__header--add--btn">+</i></header>
-                <ul>
-                    <li class="list__column"><label for="play__input-text1">🎁 </label><input type="checkbox" id="play__input-text1"/><p class="list__column__text">노래듣기</p></li>
-                    <li class="list__column"><label for="play__input-text2">🎁 </label><input type="checkbox" id="play__input-text2"/><p class="list__column__text">더 글로리 보기</p></li>
-                </ul>
-            </article>
-        </section>
+      <section class="calendar">
+        <div class="calendar__column">
+          <p class="calendar__column--days">월</p>
+          <p class="calendar__column--days">화</p>
+          <p class="calendar__column--days">수</p>
+          <p class="calendar__column--days">목</p>
+          <p class="calendar__column--days">금</p>
+          <p class="calendar__column--days">토</p>
+          <p class="calendar__column--days">일</p>
+        </div>
+        <ul class="calendar__column">
+          <li>
+            <i class="calendar__column--to--do--list">7</i>
+            <p class="calendar__column--date">3</p>
+          </li>
+          <li>
+            <i class="calendar__column--to--do--list">8</i>
+            <p class="calendar__column--date">4</p>
+          </li>
+          <li>
+            <i class="calendar__column--to--do--list">6</i>
+            <p class="calendar__column--date">5</p>
+          </li>
+          <li>
+            <i class="calendar__column--to--do--list">6</i>
+            <p class="calendar__column--date">6</p>
+          </li>
+          <li>
+            <i class="calendar__column--to--do--list">7</i>
+            <p class="calendar__column--date">7</p>
+          </li>
+          <li>
+            <i class="calendar__column--to--do--list">9</i>
+            <p class="calendar__column--date">8</p>
+          </li>
+          <li>
+            <i class="calendar__column--to--do--list">10</i>
+            <p class="calendar__column--date">9</p>
+          </li>
+        </ul>
+      </section>
+      <section class="lists">
+        <article class="list">
+          <header class="list__header">SOPT<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="sopt__input-text1">🎁 </label
+              ><input type="checkbox" id="sopt__input-text1" />
+              <p class="list__column__text">해삐🌼웹팟 세미나</p>
+            </li>
+            <li class="list__column">
+              <label for="sopt__input-text2">🎁</label
+              ><input type="checkbox" id="sopt__input-text2" />
+              <p class="list__column__text">금잔디 코드리뷰</p>
+            </li>
+            <li class="list__column">
+              <label for="sopt__input-text3">🎁</label
+              ><input type="checkbox" id="sopt__input-text3" />
+              <p class="list__column__text">아티클스터디 아티클</p>
+            </li>
+            <li class="list__column">
+              <label for="sopt__input-text4">🎁</label
+              ><input type="checkbox" id="sopt__input-text4" />
+              <p class="list__column__text">js스터디 아티클</p>
+            </li>
+            <li class="list__column">
+              <label for="sopt__input-text5">🎁</label
+              ><input type="checkbox" id="sopt__input-text5" />
+              <p class="list__column__text">Track1 개발</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">CAU<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="cau__input-text1">🎁 </label
+              ><input type="checkbox" id="cau__input-text1" />
+              <p class="list__column__text">한자 문제 제작 과제</p>
+            </li>
+            <li class="list__column">
+              <label for="cau__input-text2">🎁 </label
+              ><input type="checkbox" id="cau__input-text2" />
+              <p class="list__column__text">한자 필사 과제</p>
+            </li>
+            <li class="list__column">
+              <label for="cau__input-text3">🎁 </label
+              ><input type="checkbox" id="cau__input-text3" />
+              <p class="list__column__text">강의 수강</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">ROUTINE<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="routine__input-text1">🎁 </label
+              ><input type="checkbox" id="routine__input-text1" />
+              <p class="list__column__text">필라테스</p>
+            </li>
+            <li class="list__column">
+              <label for="routine__input-text2">🎁 </label
+              ><input type="checkbox" id="routine__input-text2" />
+              <p class="list__column__text">독서</p>
+            </li>
+            <li class="list__column">
+              <label for="routine__input-text3">🎁 </label
+              ><input type="checkbox" id="routine__input-text3" />
+              <p class="list__column__text">1일1커밋</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">ETC<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="etc__input-text1">🎁 </label
+              ><input type="checkbox" id="etc__input-text1" />
+              <p class="list__column__text">마스크 주문하기</p>
+            </li>
+            <li class="list__column">
+              <label for="etc__input-text2">🎁 </label
+              ><input type="checkbox" id="etc__input-text2" />
+              <p class="list__column__text">당근 택배부치기</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">FRIENDS<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="friends__input-text1">🎁 </label
+              ><input type="checkbox" id="friends__input-text1" />
+              <p class="list__column__text">버즈 생일 챙기기</p>
+            </li>
+            <li class="list__column">
+              <label for="friends__input-text2">🎁 </label
+              ><input type="checkbox" id="friends__input-text2" />
+              <p class="list__column__text">Track1 릴리즈 기념 인형 만들기</p>
+            </li>
+            <li class="list__column">
+              <label for="friends__input-text3">🎁 </label
+              ><input type="checkbox" id="friends__input-text3" />
+              <p class="list__column__text">아티클스터디 아티클</p>
+            </li>
+            <li class="list__column">
+              <label for="friends__input-text4">🎁 </label
+              ><input type="checkbox" id="friends__input-text4" />
+              <p class="list__column__text">js스터디 아티클</p>
+            </li>
+            <li class="list__column">
+              <label for="friends__input-text5">🎁 </label
+              ><input type="checkbox" id="friends__input-text5" />
+              <p class="list__column__text">Track1 개발</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">CLEAN<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="clean__input-text1">🎁 </label
+              ><input type="checkbox" id="clean__input-text1" />
+              <p class="list__column__text">청소</p>
+            </li>
+            <li class="list__column">
+              <label for="clean__input-text2">🎁 </label
+              ><input type="checkbox" id="clean__input-text2" />
+              <p class="list__column__text">빨래</p>
+            </li>
+            <li class="list__column">
+              <label for="clean__input-text3">🎁 </label
+              ><input type="checkbox" id="clean__input-text3" />
+              <p class="list__column__text">환기</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">MEETING<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="meeting__input-text1">🎁 </label
+              ><input type="checkbox" id="meeting__input-text1" />
+              <p class="list__column__text">스타트업 서핑 킥오프</p>
+            </li>
+            <li class="list__column">
+              <label for="meeting__input-text2">🎁 </label
+              ><input type="checkbox" id="meeting__input-text2" />
+              <p class="list__column__text">Track1 코어타임</p>
+            </li>
+          </ul>
+        </article>
+        <article class="list">
+          <header class="list__header">PLAY<i class="list__header--add--btn">+</i></header>
+          <ul>
+            <li class="list__column">
+              <label for="play__input-text1">🎁 </label
+              ><input type="checkbox" id="play__input-text1" />
+              <p class="list__column__text">노래듣기</p>
+            </li>
+            <li class="list__column">
+              <label for="play__input-text2">🎁 </label
+              ><input type="checkbox" id="play__input-text2" />
+              <p class="list__column__text">더 글로리 보기</p>
+            </li>
+          </ul>
+        </article>
+      </section>
     </main>
     <footer class="footer mobile">
-        <button type="button" class="footer__button">
-            <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘"/></i>
-            <p>달력</p>
-        </button>
-        <button type="button" class="footer__button">
-            <i><img src="assets/icon/personIc.svg" alt="사람 아이콘"/></i>
-            <p>MY</p>
-        </button>
+      <button type="button" class="footer__button">
+        <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘" /></i>
+        <p>달력</p>
+      </button>
+      <button type="button" class="footer__button">
+        <i><img src="assets/icon/personIc.svg" alt="사람 아이콘" /></i>
+        <p>MY</p>
+      </button>
     </footer>
-</body>
+  </body>
 </html>

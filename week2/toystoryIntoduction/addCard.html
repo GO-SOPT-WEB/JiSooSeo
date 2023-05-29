@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/post.css" />
+    <title>새 장난감 추가</title>
+  </head>
+  <body>
+    <main>
+      <header class="header">
+        <h1 class="header__title">🤖 장난감을 추가해주세요 🤖</h1>
+      </header>
+        <section class="form__section">
+          <article class="form__info">
+            <header class="form__info__header">장난감 이름</header>
+            <input type="text" placeholder="장난감 이름" class="form__info__input" id="toy-name-input"/>
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">해시태그</header>
+            <input type="text" placeholder="해시태그" class="form__info__input" id="toy-hashtags-input"/>
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">카테고리</header>
+            <select class="toy-category">
+              <option value="total">전체 🎬</option>
+              <option value="main-character">주인공 🤹‍♀️</option>
+              <option value="evil">악인 🎪</option>
+              <option value="new-face">뉴페이스 🎼</option>
+            </select>
+          </article>
+          <article class="form__info">
+            <header class="form__info__header">장난감 사진</header>
+          </article>
+          <label for="form__info__img">
+            <i><img src="./assets//image/addimg.png" alt="#" class="form__info__img--add-img"/></i>
+          </label>
+          <input
+            type="file"
+            name="file"
+            id="form__info__img"
+            accept="image/*" onchange="setThumbnail(event);"
+          />
+          <article class="form__info">
+            <div class="form__info__img--container">
+            </div>
+          </article>
+          <button type="submit" class="form__info__button" onclick="submit()">🦾움치키🧸움치키⛄️</button>
+        </section>
+    </main>
+    <footer>made by jisoo</footer>
+    <script src=./js/post.js type="text/javascript"></script>
+  </body>
+</html>
