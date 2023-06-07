@@ -1,26 +1,31 @@
+import React, { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import CardList from '../@components/cardList';
 import LevelButton from '../@components/levelButton';
 import MainHeader from '../@components/mainHeader';
+import ModalFrame from '../@components/modal/modalFrame';
 import ResetButton from '../@components/resetButton';
 import { CARDS_LIST } from '../core/cardsData';
-import { useEffect, useState } from 'react';
 import { levelType } from '../core/levelType';
-import styled from 'styled-components';
-import ModalFrame from '../@components/modal/modalFrame';
+
+interface cardType {
+  name: string;
+  img: string;
+}
 
 export default function FindingPage() {
-  const [copyCards, setCopyCards] = useState([]);
-  const [cards, setCards] = useState([]);
+  const [copyCards, setCopyCards] = useState<cardType[]>([]);
+  const [cards, setCards] = useState<cardType[]>([]);
   const [isReset, setIsReset] = useState(false);
   const [level, setLevel] = useState(levelType.EASY);
   const [correct, setCorrect] = useState(0);
   const [onModal, setOnModal] = useState(false);
 
-  function mixCards(level) {
+  function mixCards(level: number) {
     let newCardData = JSON.parse(JSON.stringify(CARDS_LIST)); //카드데이터 깊은 복사
 
     //1~9 수 중에서 level개만큼 랜덤 숫자 뽑기
-    let randomIndexArray = [];
+    let randomIndexArray: number[] = [];
     for (let i = 0; i < level; i++) {
       let randomNum = Math.floor(Math.random() * (9 - 0) + 0);
       if (randomIndexArray.indexOf(randomNum) === -1) {
@@ -37,7 +42,7 @@ export default function FindingPage() {
   }
 
   function makeCardSet() {
-    let realCardData = [];
+    let realCardData: cardType[] = [];
     for (let i = 0; i < copyCards.length; i++) {
       realCardData.push(copyCards[i]);
       realCardData.push(copyCards[i]);
