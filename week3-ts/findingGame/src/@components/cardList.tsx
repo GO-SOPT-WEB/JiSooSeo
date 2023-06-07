@@ -1,8 +1,16 @@
-import styled from 'styled-components';
-import Card from './card';
 import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 import { levelType } from '../core/levelType';
 import { reverseCardEasy, reverseCardHard, reverseCardNormal } from '../core/reverseCard';
+import { cardType } from '../type/cardType';
+import Card from './card';
+
+interface CardListProps {
+  level: number;
+  cards: cardType[];
+
+  setCorrect: React.Dispatch<React.SetStateAction<number>>;
+}
 
 export default function CardList(props) {
   const { level, cards, correct, setCorrect, isReset } = props;

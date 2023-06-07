@@ -1,6 +1,12 @@
+import React from 'react';
 import styled from 'styled-components';
 
-export default function ResetButton(props) {
+interface ResetButtonProps {
+  isReset: boolean;
+  setIsReset: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export default function ResetButton(props: ResetButtonProps) {
   const { isReset, setIsReset } = props;
 
   function reset() {

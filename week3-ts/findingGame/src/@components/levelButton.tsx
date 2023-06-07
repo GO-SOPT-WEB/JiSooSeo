@@ -1,10 +1,16 @@
+import React from 'react';
 import styled from 'styled-components';
 import { levelType } from '../core/levelType';
 
-export default function LevelButton(props) {
+interface LevelButtonProps {
+  level: number;
+  setLevel: React.Dispatch<React.SetStateAction<number>>;
+}
+
+export default function LevelButton(props: LevelButtonProps) {
   const { level, setLevel } = props;
 
-  function changeLevel(levelType) {
+  function changeLevel(levelType: number) {
     setLevel(levelType);
   }
 

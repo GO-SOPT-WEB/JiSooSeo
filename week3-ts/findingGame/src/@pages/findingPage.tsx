@@ -7,11 +7,7 @@ import ModalFrame from '../@components/modal/modalFrame';
 import ResetButton from '../@components/resetButton';
 import { CARDS_LIST } from '../core/cardsData';
 import { levelType } from '../core/levelType';
-
-interface cardType {
-  name: string;
-  img: string;
-}
+import { cardType } from '../type/cardType';
 
 export default function FindingPage() {
   const [copyCards, setCopyCards] = useState<cardType[]>([]);
