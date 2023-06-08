@@ -40,7 +40,7 @@ const CardBoxWrapper = styled.article`
   cursor: pointer;
 `;
 
-const CardBox = styled.div`
+const CardBox = styled.div<{ isReverse: boolean }>`
   width: 100%;
   height: 100%;
   transition: all 1s;
@@ -49,7 +49,7 @@ const CardBox = styled.div`
   transform: rotateY(${({ isReverse }) => isReverse && 180}deg);
 `;
 
-const CardImgFrontWrapper = styled.div`
+const CardImgFrontWrapper = styled.div<{ isReverse: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,7 +64,7 @@ const CardImgFrontWrapper = styled.div`
   transform: rotateY(180deg);
 `;
 
-const CardImgBackWrapper = styled.div`
+const CardImgBackWrapper = styled.div<{ isReverse: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;

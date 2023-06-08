@@ -1,5 +1,9 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+
+interface ScoreProps {
+  level: number;
+}
 
 export default function Score(props) {
   const { level, correct, setOnModal } = props;
@@ -13,7 +17,7 @@ export default function Score(props) {
     correct !== 0 && setCorrectOneCard(true);
     setTimeout(() => {
       setCorrectOneCard(false);
-    }, '2000');
+    }, 2000);
     checkAllCorrect();
   }, [correct]);
 
@@ -33,7 +37,7 @@ const BlinkEffect = keyframes`
   }
 `;
 
-const ScoreText = styled.p`
+const ScoreText = styled.p<{ correctOneCard: boolean }>`
   margin-top: 1rem;
 
   color: ${({ correctOneCard, theme }) => (correctOneCard ? theme.colors.blue : theme.colors.grey)};

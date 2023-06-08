@@ -1,23 +1,24 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { levelType } from '../core/levelType';
 import { reverseCardEasy, reverseCardHard, reverseCardNormal } from '../core/reverseCard';
-import { cardType } from '../type/cardType';
+import { cardType, selectCardType } from '../type/cardType';
 import Card from './card';
 
 interface CardListProps {
   level: number;
   cards: cardType[];
-
+  correct: number;
   setCorrect: React.Dispatch<React.SetStateAction<number>>;
+  isReset: boolean;
 }
 
-export default function CardList(props) {
+export default function CardList(props: CardListProps) {
   const { level, cards, correct, setCorrect, isReset } = props;
   //카드 전체의 선택여부
   const [selectCards, setSelectCards] = useState(reverseCardEasy);
   //선택된 카드의 인덱스 두 개 담기는 배열
-  const [selectedIdx, setSelectedIdx] = useState([]);
+  const [selectedIdx, setSelectedIdx] = useState<selectCardType[]>([]);
 
   useEffect(() => {
     switch (level) {
@@ -31,7 +32,7 @@ export default function CardList(props) {
         setSelectCards(reverseCardHard);
         break;
       default:
-        setSelectCards();
+        // setSelectCards();
         break;
     }
   }, [level]);
@@ -47,7 +48,7 @@ export default function CardList(props) {
     );
   }, [isReset]);
 
-  function checkSameCards(selectedIdxLen) {
+  function checkSameCards(selectedIdxLen: number) {
     const idx1 = selectedIdx[selectedIdxLen - 2].idx;
     const idx2 = selectedIdx[selectedIdxLen - 1].idx;
 
@@ -71,7 +72,7 @@ export default function CardList(props) {
               : selectCard
           )
         );
-      }, '1000');
+      }, 1000);
     }
     setSelectedIdx([]);
   }

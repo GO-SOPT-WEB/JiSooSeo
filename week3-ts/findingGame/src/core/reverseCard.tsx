@@ -1,4 +1,6 @@
-export const reverseCardEasy = [
+import { selectCardType } from '../type/cardType';
+
+export const reverseCardEasy: selectCardType[] = [
   { idx: 0, selected: false },
   { idx: 1, selected: false },
   { idx: 2, selected: false },
@@ -11,7 +13,7 @@ export const reverseCardEasy = [
   { idx: 9, selected: false },
 ];
 
-export const reverseCardNormal = [
+export const reverseCardNormal: selectCardType[] = [
   { idx: 0, selected: false },
   { idx: 1, selected: false },
   { idx: 2, selected: false },
@@ -28,7 +30,7 @@ export const reverseCardNormal = [
   { idx: 13, selected: false },
 ];
 
-export const reverseCardHard = [
+export const reverseCardHard: selectCardType[] = [
   { idx: 0, selected: false },
   { idx: 1, selected: false },
   { idx: 2, selected: false },

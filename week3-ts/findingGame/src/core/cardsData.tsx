@@ -1,4 +1,6 @@
-export const CARDS_LIST = [
+import { cardType } from '../type/cardType';
+
+export const CARDS_LIST: cardType[] = [
   {
     name: '하트루피',
     img: 'https://item.kakaocdn.net/do/dbcd799aac800f6a680f1d2b04cee5688f324a0b9c48f77dbce3a43bd11ce785',
