@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import { MainHeaderProps } from './mainHeader';
 
-interface ScoreProps {
-  level: number;
-}
-
-export default function Score(props) {
+export default function Score(props: MainHeaderProps) {
   const { level, correct, setOnModal } = props;
   const [correctOneCard, setCorrectOneCard] = useState(false);
 
