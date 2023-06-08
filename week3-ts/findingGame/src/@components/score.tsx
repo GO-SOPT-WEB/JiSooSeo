@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { MainHeaderProps } from './mainHeader';
+import { MainHeaderProps } from '../type/scoreType';
 
 export default function Score(props: MainHeaderProps) {
   const { level, correct, setOnModal } = props;

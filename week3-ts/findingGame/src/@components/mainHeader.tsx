@@ -1,12 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { MainHeaderProps } from '../type/scoreType';
 import Score from './score';
-
-export interface MainHeaderProps {
-  level: number;
-  correct: number;
-  setOnModal: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 export default function MainHeader(props: MainHeaderProps) {
   const { level, correct, setOnModal } = props;

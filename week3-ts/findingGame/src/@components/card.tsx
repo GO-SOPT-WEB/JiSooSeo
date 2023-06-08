@@ -22,7 +22,7 @@ export default function Card(props: CardProps) {
           selectCard.idx === idx ? { ...selectCard, selected: !selectCard.selected } : selectCard
         )
       );
-      setSelectedIdx((selectedIdx) => [...selectedIdx, { idx }]);
+      setSelectedIdx([...selectedIdx, { idx }]);
     }
   }
 
