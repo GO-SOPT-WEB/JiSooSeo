@@ -19,7 +19,7 @@ export default function Score(props: MainHeaderProps) {
   }, [correct]);
 
   return (
-    <ScoreText correctOneCard={correctOneCard}>
+    <ScoreText $correctOneCard={correctOneCard}>
       {correct}/{level}
     </ScoreText>
   );
@@ -34,11 +34,12 @@ const BlinkEffect = keyframes`
   }
 `;
 
-const ScoreText = styled.p<{ correctOneCard: boolean }>`
+const ScoreText = styled.p<{ $correctOneCard: boolean }>`
   margin-top: 1rem;
 
-  color: ${({ correctOneCard, theme }) => (correctOneCard ? theme.colors.blue : theme.colors.grey)};
+  color: ${({ $correctOneCard, theme }) =>
+    $correctOneCard ? theme.colors.blue : theme.colors.grey};
   ${({ theme }) => theme.fonts.title};
 
-  animation: ${BlinkEffect} ${({ correctOneCard }) => (correctOneCard ? 1 : 0)}s step-end infinite;
+  animation: ${BlinkEffect} ${({ $correctOneCard }) => ($correctOneCard ? 1 : 0)}s step-end infinite;
 `;

@@ -28,11 +28,11 @@ export default function Card(props: CardProps) {
 
   return (
     <CardBoxWrapper onClick={reverseCard}>
-      <CardBox isReverse={selectCards[idx].selected}>
-        <CardImgFrontWrapper isReverse={selectCards[idx].selected}>
+      <CardBox $isReverse={selectCards[idx].selected}>
+        <CardImgFrontWrapper $isReverse={selectCards[idx].selected}>
           <Img src={img} alt={name} />
         </CardImgFrontWrapper>
-        <CardImgBackWrapper isReverse={selectCards[idx].selected}>
+        <CardImgBackWrapper $isReverse={selectCards[idx].selected}>
           <i>🌊</i>
         </CardImgBackWrapper>
       </CardBox>
@@ -51,16 +51,16 @@ const CardBoxWrapper = styled.article`
   cursor: pointer;
 `;
 
-const CardBox = styled.div<{ isReverse: boolean }>`
+const CardBox = styled.div<{ $isReverse: boolean }>`
   width: 100%;
   height: 100%;
   transition: all 1s;
   transform-style: preserve-3d;
   backface-visibility: hidden;
-  transform: rotateY(${({ isReverse }) => isReverse && 180}deg);
+  transform: rotateY(${({ $isReverse }) => $isReverse && 180}deg);
 `;
 
-const CardImgFrontWrapper = styled.div<{ isReverse: boolean }>`
+const CardImgFrontWrapper = styled.div<{ $isReverse: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -75,7 +75,7 @@ const CardImgFrontWrapper = styled.div<{ isReverse: boolean }>`
   transform: rotateY(180deg);
 `;
 
-const CardImgBackWrapper = styled.div<{ isReverse: boolean }>`
+const CardImgBackWrapper = styled.div<{ $isReverse: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
