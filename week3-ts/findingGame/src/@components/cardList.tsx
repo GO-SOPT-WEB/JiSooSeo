@@ -47,7 +47,7 @@ export default function CardList(props: CardListProps) {
       )
     );
   }, [isReset]);
-  console.log(selectedIdx);
+
   function checkSameCards(selectedIdxLen: number) {
     const idx1 = selectedIdx[selectedIdxLen - 2].idx;
     const idx2 = selectedIdx[selectedIdxLen - 1].idx;
