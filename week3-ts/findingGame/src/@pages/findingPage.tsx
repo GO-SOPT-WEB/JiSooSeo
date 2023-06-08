@@ -33,7 +33,7 @@ export default function FindingPage() {
 
     //랜덤 숫자의 인덱스에 해당하는 카드 정보 담기
     for (let i = 0; i < level; i++) {
-      setCopyCards([...copyCards, newCardData[randomIndexArray[i]]]);
+      setCopyCards((copyCards) => [...copyCards, newCardData[randomIndexArray[i]]]);
     }
   }
 
