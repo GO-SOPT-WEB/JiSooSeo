@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { levelType } from '../core/levelType';
 import { reverseCardEasy, reverseCardHard, reverseCardNormal } from '../core/reverseCard';
-import { cardType, selectCardType } from '../type/cardType';
+import { cardType, idxType } from '../type/cardType';
 import Card from './card';
 
 interface CardListProps {
@@ -18,7 +18,7 @@ export default function CardList(props: CardListProps) {
   //카드 전체의 선택여부
   const [selectCards, setSelectCards] = useState(reverseCardEasy);
   //선택된 카드의 인덱스 두 개 담기는 배열
-  const [selectedIdx, setSelectedIdx] = useState<selectCardType[]>([]);
+  const [selectedIdx, setSelectedIdx] = useState<idxType[]>([]);
 
   useEffect(() => {
     switch (level) {
@@ -47,7 +47,7 @@ export default function CardList(props: CardListProps) {
       )
     );
   }, [isReset]);
-
+  console.log(selectedIdx);
   function checkSameCards(selectedIdxLen: number) {
     const idx1 = selectedIdx[selectedIdxLen - 2].idx;
     const idx2 = selectedIdx[selectedIdxLen - 1].idx;

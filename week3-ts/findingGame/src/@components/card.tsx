@@ -1,7 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { idxType, selectCardType } from '../type/cardType';
 
-export default function Card(props) {
+interface CardProps {
+  idx: number;
+  img: string;
+  name: string;
+  selectedIdx: idxType[];
+  setSelectedIdx: React.Dispatch<React.SetStateAction<idxType[]>>;
+  selectCards: selectCardType[];
+  setSelectCards: React.Dispatch<React.SetStateAction<selectCardType[]>>;
+}
+
+export default function Card(props: CardProps) {
   const { idx, img, name, selectedIdx, setSelectedIdx, selectCards, setSelectCards } = props;
 
   function reverseCard() {

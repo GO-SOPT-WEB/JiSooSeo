@@ -3,7 +3,10 @@ export interface cardType {
   img: string;
 }
 
-export interface selectCardType {
+export interface idxType {
   idx: number;
+}
+
+export interface selectCardType extends idxType {
   selected: boolean;
 }
