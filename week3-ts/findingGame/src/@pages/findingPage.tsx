@@ -12,8 +12,10 @@ import { cardType } from '../type/cardType';
 export default function FindingPage() {
   const [copyCards, setCopyCards] = useState<cardType[]>([]);
   const [cards, setCards] = useState<cardType[]>([]);
+  //
   const [isReset, setIsReset] = useState(false);
   const [level, setLevel] = useState(levelType.EASY);
+  //
   const [correct, setCorrect] = useState(0);
   const [onModal, setOnModal] = useState(false);
 
