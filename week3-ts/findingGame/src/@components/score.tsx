@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 import styled, { keyframes } from 'styled-components';
+import { cardsLevel } from '../recoil/card';
 import { MainHeaderProps } from '../type/scoreType';
 
 export default function Score(props: MainHeaderProps) {
-  const { level, correct, setOnModal } = props;
+  const { correct, setOnModal } = props;
   const [correctOneCard, setCorrectOneCard] = useState(false);
+  const [level, setLevel] = useRecoilState(cardsLevel);
 
   function checkAllCorrect() {
     level === correct && setOnModal(true);

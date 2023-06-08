@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import CardList from '../@components/cardList';
 import LevelButton from '../@components/levelButton';
@@ -7,15 +8,16 @@ import ModalFrame from '../@components/modal/modalFrame';
 import ResetButton from '../@components/resetButton';
 import { CARDS_LIST } from '../core/cardsData';
 import { levelType } from '../core/levelType';
+import { cardsLevel, cardsReset } from '../recoil/card';
 import { cardType } from '../type/cardType';
 
 export default function FindingPage() {
   const [copyCards, setCopyCards] = useState<cardType[]>([]);
   const [cards, setCards] = useState<cardType[]>([]);
-  //
-  const [isReset, setIsReset] = useState(false);
-  const [level, setLevel] = useState(levelType.EASY);
-  //
+
+  const [isReset, setIsReset] = useRecoilState(cardsReset);
+  const [level, setLevel] = useRecoilState(cardsLevel);
+
   const [correct, setCorrect] = useState(0);
   const [onModal, setOnModal] = useState(false);
 
@@ -72,17 +74,11 @@ export default function FindingPage() {
   return (
     <>
       {onModal && <ModalFrame setOnModal={setOnModal}>🌷축하합니다🌷</ModalFrame>}
-      <ResetButton isReset={isReset} setIsReset={setIsReset} />
-      <MainHeader level={level} correct={correct} setOnModal={setOnModal} />
+      <ResetButton />
+      <MainHeader correct={correct} setOnModal={setOnModal} />
       <MainSectionWrapper>
-        <LevelButton level={level} setLevel={setLevel} />
-        <CardList
-          level={level}
-          cards={cards}
-          correct={correct}
-          setCorrect={setCorrect}
-          isReset={isReset}
-        />
+        <LevelButton />
+        <CardList cards={cards} correct={correct} setCorrect={setCorrect} />
       </MainSectionWrapper>
     </>
   );

@@ -1,14 +1,11 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
 import { levelType } from '../core/levelType';
+import { cardsLevel } from '../recoil/card';
 
-interface LevelButtonProps {
-  level: number;
-  setLevel: React.Dispatch<React.SetStateAction<number>>;
-}
-
-export default function LevelButton(props: LevelButtonProps) {
-  const { level, setLevel } = props;
+export default function LevelButton() {
+  const [level, setLevel] = useRecoilState(cardsLevel);
 
   function changeLevel(levelType: number) {
     setLevel(levelType);

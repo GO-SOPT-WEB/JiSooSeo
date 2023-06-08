@@ -1,24 +1,26 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import { levelType } from '../core/levelType';
 import { reverseCardEasy, reverseCardHard, reverseCardNormal } from '../core/reverseCard';
+import { cardsLevel, cardsReset } from '../recoil/card';
 import { cardType, idxType } from '../type/cardType';
 import Card from './card';
 
 interface CardListProps {
-  level: number;
   cards: cardType[];
   correct: number;
   setCorrect: React.Dispatch<React.SetStateAction<number>>;
-  isReset: boolean;
 }
 
 export default function CardList(props: CardListProps) {
-  const { level, cards, correct, setCorrect, isReset } = props;
+  const { cards, correct, setCorrect } = props;
   //카드 전체의 선택여부
   const [selectCards, setSelectCards] = useState(reverseCardEasy);
   //선택된 카드의 인덱스 두 개 담기는 배열
   const [selectedIdx, setSelectedIdx] = useState<idxType[]>([]);
+  const isReset = useRecoilValue(cardsReset);
+  const level = useRecoilValue(cardsLevel);
 
   useEffect(() => {
     switch (level) {

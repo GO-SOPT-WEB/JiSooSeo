@@ -4,12 +4,12 @@ import { MainHeaderProps } from '../type/scoreType';
 import Score from './score';
 
 export default function MainHeader(props: MainHeaderProps) {
-  const { level, correct, setOnModal } = props;
+  const { correct, setOnModal } = props;
 
   return (
     <Header>
       <Title>잔망루피를 찾아라!</Title>
-      <Score level={level} correct={correct} setOnModal={setOnModal} />
+      <Score correct={correct} setOnModal={setOnModal} />
     </Header>
   );
 }

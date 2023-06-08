@@ -1,13 +1,10 @@
 import React from 'react';
+import { useRecoilState } from 'recoil';
 import styled from 'styled-components';
+import { cardsReset } from '../recoil/card';
 
-interface ResetButtonProps {
-  isReset: boolean;
-  setIsReset: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export default function ResetButton(props: ResetButtonProps) {
-  const { isReset, setIsReset } = props;
+export default function ResetButton() {
+  const [isReset, setIsReset] = useRecoilState(cardsReset);
 
   function reset() {
     setIsReset(!isReset);
