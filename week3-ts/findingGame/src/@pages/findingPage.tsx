@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import styled from 'styled-components';
 import CardList from '../@components/cardList';
 import LevelButton from '../@components/levelButton';
@@ -15,7 +15,7 @@ export default function FindingPage() {
   const [copyCards, setCopyCards] = useState<cardType[]>([]);
   const [cards, setCards] = useState<cardType[]>([]);
 
-  const [isReset, setIsReset] = useRecoilState(cardsReset);
+  const isReset = useRecoilValue(cardsReset);
   const [level, setLevel] = useRecoilState(cardsLevel);
 
   const [correct, setCorrect] = useState(0);
