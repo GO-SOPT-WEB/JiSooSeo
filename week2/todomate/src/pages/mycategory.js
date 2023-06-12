@@ -1,17 +1,17 @@
 export function MyCategory() {
-  document.querySelector('#app').innerHTML = `
+  document.querySelector("#app").innerHTML = `
 <header class="header mobile">🌷 WEB TO DO MATE 🌷</header>
 <main class="main mobile">
   <section class="calendar">
-    <ul class="calendar__column--flex">
-      <li class="calendar__column--flex__header">SOPT</li>
-      <li class="calendar__column--flex__header">CAU</li>
-      <li class="calendar__column--flex__header">ROUTINE</li>
-      <li class="calendar__column--flex__header">ETC</li>
-      <li class="calendar__column--flex__header">FRIENDS</li>
-      <li class="calendar__column--flex__header">CLEAN</li>
-      <li class="calendar__column--flex__header">MEETING</li>
-      <li class="calendar__column--flex__header">PLAY</li>
+    <ul class="calendar__column--flex" id="categorys">
+      <li class="calendar__column--flex__header" draggable="true">SOPT</li>
+      <li class="calendar__column--flex__header" draggable="true">CAU</li>
+      <li class="calendar__column--flex__header" draggable="true">ROUTINE</li>
+      <li class="calendar__column--flex__header" draggable="true">ETC</li>
+      <li class="calendar__column--flex__header" draggable="true">FRIENDS</li>
+      <li class="calendar__column--flex__header" draggable="true">CLEAN</li>
+      <li class="calendar__column--flex__header" draggable="true">MEETING</li>
+      <li class="calendar__column--flex__header" draggable="true">PLAY</li>
     </ul>
   </section>
   <section class="lists"></section>
@@ -31,4 +31,35 @@ export function MyCategory() {
 </a>
 </footer>
 `;
+
+  const list = document.querySelector(".calendar__column--flex");
+
+  let currentItemIndex = null;
+  let currentItem = null;
+
+  list.addEventListener("dragstart", (e) => {
+    currentItem = e.target;
+    const listArr = [...currentItem.parentElement.children];
+    currentItemIndex = listArr.indexOf(currentItem);
+  });
+
+  list.addEventListener("dragover", (e) => {
+    e.preventDefault();
+  });
+
+  list.addEventListener("drop", (e) => {
+    e.preventDefault();
+
+    const currentDropItem = e.target;
+    const listArr = [...currentItem.parentElement.children];
+    const dropItemIndex = listArr.indexOf(currentDropItem);
+
+    if (currentItemIndex < dropItemIndex) {
+      currentDropItem.after(currentItem);
+    } else {
+      currentDropItem.before(currentItem);
+    }
+  });
+
+  console.log(currentItemIndex);
 }

@@ -36,7 +36,7 @@ function addTodo() {
 
   tab.innerHTML += `
   <li class="list__column__new">
-    <label for="${id}__input-text" onclick="solvedTodo('${id}__input-textㄴ')">🎁 </label>
+    <label for="${id}__input-text" onclick="solvedTodo('${id}__input-text')">🎁 </label>
     <input type="checkbox" id="${id}__input-text" />
     <p class="list__column__text">${input}</p>
   </li>
