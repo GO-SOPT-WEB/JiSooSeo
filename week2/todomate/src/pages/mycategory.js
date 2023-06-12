@@ -59,7 +59,7 @@ export function MyCategory() {
     } else {
       currentDropItem.before(currentItem);
     }
-  });
 
-  console.log(currentItemIndex);
+    window.localStorage.setItem("categorys", [...e.target.parentElement.children]);
+  });
 }
