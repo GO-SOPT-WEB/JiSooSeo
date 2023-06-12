@@ -50,10 +50,10 @@ export function Home() {
     );
   }
 
-  const basicCategorys = window.localStorage.getItem("categorys");
-  console.log(basicCategorys);
+  const basicCategorys = window.localStorage.getItem("categorys").split(",");
+  // console.log(basicCategorys.split(","));
 
-  // if (basicCategorys === null) {
+  // if (basicCategorys.length === 0) {
   //   {
   //     data.categorys.map(
   //       ({ category }) =>
@@ -66,43 +66,112 @@ export function Home() {
   //   document.querySelector("ul.calendar__column--flex").innerHTML += basicCategorys;
   // }
 
-  // if (basicCategorys !== null) {
-  //   const datas = data.lists;
-  // } else {
-  //   const newdatas = [...data.lists];
-  //   const datas = [];
-  //   datas.push(newdatas.filter(({ header }) => header !== basicCategorys.header));
-  // }
+  // const datas = [];
 
-  {
-    data.lists.map(
-      ({ id, header, todos }) =>
-        (document.querySelector(".lists").innerHTML += `
-        <article class="list">
-          <aside class="modal__wrapper">
-            <div class="modal">
-            <i class="modal--close--tag" onclick="closeModal()">x</i>
-            <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo"/>
-            <button type="submit" onclick="addTodo()">추가</button>
-            <div>
-          </aside>
-            <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">+</i></header>
-            <ul id=${header}>
-              ${todos.map(
-                (todo, idx) =>
-                  `
-                  <li class="list__column">
-                    <label for="${header}__input-text${idx + 1}" onclick="solvedTodo('${header}__input-text${
-                    idx + 1
-                  }')">🎁 </label>
-                    <input type="checkbox" id="${header}__input-text${idx + 1}" />
-                    <p class="list__column__text">${todo}</p>
-                  </li>
-                  `,
-              )}
-              </ul>
-        </article>
-        `),
-    );
+  if (!basicCategorys) {
+    {
+      data.lists.map(
+        ({ id, header, todos }) =>
+          (document.querySelector(".lists").innerHTML += `
+          <article class="list">
+            <aside class="modal__wrapper">
+              <div class="modal">
+              <i class="modal--close--tag" onclick="closeModal()">x</i>
+              <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo"/>
+              <button type="submit" onclick="addTodo()">추가</button>
+              <div>
+            </aside>
+              <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">+</i></header>
+              <ul id=${header}>
+                ${todos.map(
+                  (todo, idx) =>
+                    `
+                    <li class="list__column">
+                      <label for="${header}__input-text${idx + 1}" onclick="solvedTodo('${header}__input-text${
+                      idx + 1
+                    }')">🎁 </label>
+                      <input type="checkbox" id="${header}__input-text${idx + 1}" />
+                      <p class="list__column__text">${todo}</p>
+                    </li>
+                    `,
+                )}
+                </ul>
+          </article>
+          `),
+      );
+    }
+  } else {
+    const newdatas = [...data.lists];
+    const datas = [];
+    // console.log(basicCategorys.map((category) => newdatas.filter(({ header }) => header === category)[0]));
+
+    // console.log(basicCategorys[0]);
+    // console.log(newdatas);
+    datas.push(basicCategorys.map((category) => newdatas.filter(({ header }) => header === category)[0]));
+    console.log(datas[0]);
+
+    {
+      datas[0].map(
+        ({ id, header, todos }) =>
+          (document.querySelector(".lists").innerHTML += `
+          <article class="list">
+            <aside class="modal__wrapper">
+              <div class="modal">
+              <i class="modal--close--tag" onclick="closeModal()">x</i>
+              <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo"/>
+              <button type="submit" onclick="addTodo()">추가</button>
+              <div>
+            </aside>
+              <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">+</i></header>
+              <ul id=${header}>
+                ${todos.map(
+                  (todo, idx) =>
+                    `
+                    <li class="list__column">
+                      <label for="${header}__input-text${idx + 1}" onclick="solvedTodo('${header}__input-text${
+                      idx + 1
+                    }')">🎁 </label>
+                      <input type="checkbox" id="${header}__input-text${idx + 1}" />
+                      <p class="list__column__text">${todo}</p>
+                    </li>
+                    `,
+                )}
+                </ul>
+          </article>
+          `),
+      );
+    }
   }
+  // console.log(basicCategorys !== null);
+  // {
+  //   data.lists.map(
+  //     ({ id, header, todos }) =>
+  //       (document.querySelector(".lists").innerHTML += `
+  //       <article class="list">
+  //         <aside class="modal__wrapper">
+  //           <div class="modal">
+  //           <i class="modal--close--tag" onclick="closeModal()">x</i>
+  //           <input type="text" placeholder="할 일을 입력해주세요" class="modal--write--todo"/>
+  //           <button type="submit" onclick="addTodo()">추가</button>
+  //           <div>
+  //         </aside>
+  //           <header class="list__header">${header}<i class="list__header--add--btn" onclick="openModal(${header})">+</i></header>
+  //           <ul id=${header}>
+  //             ${todos.map(
+  //               (todo, idx) =>
+  //                 `
+  //                 <li class="list__column">
+  //                   <label for="${header}__input-text${idx + 1}" onclick="solvedTodo('${header}__input-text${
+  //                   idx + 1
+  //                 }')">🎁 </label>
+  //                   <input type="checkbox" id="${header}__input-text${idx + 1}" />
+  //                   <p class="list__column__text">${todo}</p>
+  //                 </li>
+  //                 `,
+  //             )}
+  //             </ul>
+  //       </article>
+  //       `),
+  //   );
+  // }
 }
