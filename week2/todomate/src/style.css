@@ -1,5 +1,5 @@
-@import 'reset.css';
-@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+@import "reset.css";
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
 
 /* 전체 */
 body {
@@ -7,7 +7,7 @@ body {
   flex-direction: column;
   align-items: center;
 
-  font-family: 'Poor Story', cursive;
+  font-family: "Poor Story", cursive;
 }
 
 label {
@@ -228,7 +228,7 @@ i {
   border: 0.1rem solid rgb(255, 152, 169);
   border-radius: 1rem;
 
-  font-family: 'Poor Story', cursive;
+  font-family: "Poor Story", cursive;
   color: #ff6a83;
   font-size: 1.2rem;
   font-weight: bold;
@@ -238,12 +238,12 @@ i {
 }
 
 /* 체크박스 */
-[type='checkbox']:checked + .list__column__text {
+[type="checkbox"]:checked + .list__column__text {
   color: #777777;
   text-decoration-line: line-through;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   display: none;
 }
 
@@ -291,7 +291,7 @@ input[type='checkbox'] {
   background-color: #ff6a83;
 }
 
-input[type='text'] {
+input[type="text"] {
   margin: 1rem 0;
 }
 
@@ -305,7 +305,9 @@ a {
   align-items: center;
   flex-wrap: wrap;
 
-  margin: -1rem;
+  width: 20rem;
+  height: 15rem;
+  /* margin: -1rem; */
 }
 
 .calendar__column--flex__header {

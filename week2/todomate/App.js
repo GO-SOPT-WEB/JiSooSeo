@@ -1,19 +1,27 @@
-// import createRouter from './src/components/router.js';
+import { Home } from "./src/pages/home";
+import { MyCategory } from "./src/pages/mycategory";
 
-// document.querySelector('#app').innerHTML += `
-// <footer class="footer mobile">
-// <a href="#/">
-//   <button type="button" class="footer__button" data-navigate="#/" id="home" onclick="moveHome()">
-//     <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘" /></i>
-//     <p>달력</p>
-//   </button>
-// </a>
-// <a href="#/mycategory">
-//   <button type="button" class="footer__button" data-navigate="#/mycategory" id="mycategory" onclick="moveMycategory()">
-//     <i><img src="assets/icon/personIc.svg" alt="사람 아이콘" /></i>
-//     <p>MY</p>
-//   </button>
-// </a>
-// </footer>
+const ROUTE_LIST = [
+  { path: "/", element: Home },
+  { path: "/mycategory", element: MyCategory },
+];
 
-// `;
+export default class App {
+    constructor($container) {
+        this.$container = $container;
+        let currentPage = undefined;
+
+        const init = () => {
+            const findMatchedRoute = () => ROUTE_LIST.find((route) => route.path === location.pathname);
+
+            const route = () => {
+                currentPage = null;
+                const TargetPage = findMatchedRoute()?.element || Error404;
+                currentPage = new TargetPage(this.$container);
+            };
+
+            route();
+        };
+        init();
+    }
+}
