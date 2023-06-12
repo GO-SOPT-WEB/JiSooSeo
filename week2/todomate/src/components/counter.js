@@ -132,8 +132,6 @@ function addTodo() {
 
   data.lists.map(({ todos }) => array.push(...todos));
 
-  console.log(array);
-
   if (!array.includes(input)) {
     tab.innerHTML += `
     <li class="list__column__new">
