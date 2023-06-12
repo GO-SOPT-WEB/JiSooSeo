@@ -64,8 +64,6 @@ export function MyCategory() {
       currentDropItem.before(currentItem);
     }
 
-    // window.localStorage.getItem("categorys");
-    // console.log([...e.target.parentElement.children][0].innerText);
     const storeList = [];
     {
       [...e.target.parentElement.children].map(({ innerText }) => storeList.push(innerText));
