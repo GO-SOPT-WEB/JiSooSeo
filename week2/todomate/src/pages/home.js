@@ -1,7 +1,7 @@
-import { data } from '../components/data';
+import { data } from "../components/data";
 
 export function Home() {
-  document.querySelector('#app').innerHTML = `
+  document.querySelector("#app").innerHTML = `
 <header class="header mobile">🌷 WEB TO DO MATE 🌷</header>
 <main class="main mobile">
 <section class="calendar">
@@ -32,28 +32,52 @@ export function Home() {
   {
     data.calendar.map(
       ({ id, day }) =>
-        (document.querySelector('div.calendar__column').innerHTML += `
+        (document.querySelector("div.calendar__column").innerHTML += `
         <p class="calendar__column--days">${day}</p>
-    `)
+    `),
     );
   }
 
   {
     data.calendar.map(
       ({ id, list, date }) =>
-        (document.querySelector('ul.calendar__column').innerHTML += `
+        (document.querySelector("ul.calendar__column").innerHTML += `
         <li>
             <i class="calendar__column--to--do--list">${list}</i>
             <p class="calendar__column--date">${date}</p>
         </li>
-    `)
+    `),
     );
   }
+
+  const basicCategorys = window.localStorage.getItem("categorys");
+  console.log(basicCategorys);
+
+  // if (basicCategorys === null) {
+  //   {
+  //     data.categorys.map(
+  //       ({ category }) =>
+  //         (document.querySelector("ul.calendar__column--flex").innerHTML += `
+  //     <li class="calendar__column--flex__header" draggable="true" value=${category}>${category}</li>
+  //     `),
+  //     );
+  //   }
+  // } else {
+  //   document.querySelector("ul.calendar__column--flex").innerHTML += basicCategorys;
+  // }
+
+  // if (basicCategorys !== null) {
+  //   const datas = data.lists;
+  // } else {
+  //   const newdatas = [...data.lists];
+  //   const datas = [];
+  //   datas.push(newdatas.filter(({ header }) => header !== basicCategorys.header));
+  // }
 
   {
     data.lists.map(
       ({ id, header, todos }) =>
-        (document.querySelector('.lists').innerHTML += `
+        (document.querySelector(".lists").innerHTML += `
         <article class="list">
           <aside class="modal__wrapper">
             <div class="modal">
@@ -68,17 +92,17 @@ export function Home() {
                 (todo, idx) =>
                   `
                   <li class="list__column">
-                    <label for="${header}__input-text${
+                    <label for="${header}__input-text${idx + 1}" onclick="solvedTodo('${header}__input-text${
                     idx + 1
-                  }" onclick="solvedTodo('${header}__input-text${idx + 1}')">🎁 </label>
+                  }')">🎁 </label>
                     <input type="checkbox" id="${header}__input-text${idx + 1}" />
                     <p class="list__column__text">${todo}</p>
                   </li>
-                  `
+                  `,
               )}
               </ul>
         </article>
-        `)
+        `),
     );
   }
 }

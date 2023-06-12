@@ -96,13 +96,13 @@ export const data = {
       todos: ["노래듣기", "더 글로리 보기"],
     },
   ],
-  categorys: [
-    { id: 1, category: "CAU" },
-    { id: 2, category: "ROUTINE" },
-    { id: 3, category: "ETC" },
-    { id: 4, category: "FRIENDS" },
-    { id: 5, category: "CLEAN" },
-    { id: 6, category: "MEETING" },
-    { id: 7, category: "PLAY" },
-  ],
+  // categorys: [
+  //   { id: 1, category: "CAU" },
+  //   { id: 2, category: "ROUTINE" },
+  //   { id: 3, category: "ETC" },
+  //   { id: 4, category: "FRIENDS" },
+  //   { id: 5, category: "CLEAN" },
+  //   { id: 6, category: "MEETING" },
+  //   { id: 7, category: "PLAY" },
+  // ],
 };

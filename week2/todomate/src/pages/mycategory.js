@@ -27,16 +27,16 @@ export function MyCategory() {
 </footer>
 `;
 
+  const list = document.querySelector(".calendar__column--flex");
+
   {
-    data.categorys.map(
-      ({ id, category }) =>
-        (document.querySelector("ul.calendar__column--flex").innerHTML += `
-    <li class="calendar__column--flex__header" draggable="true">${category}</li>
-    `),
+    data.lists.map(
+      ({ header }) =>
+        (list.innerHTML += `
+      <li class="calendar__column--flex__header" draggable="true">${header}</li>
+      `),
     );
   }
-
-  const list = document.querySelector(".calendar__column--flex");
 
   let currentItemIndex = null;
   let currentItem = null;
@@ -64,6 +64,13 @@ export function MyCategory() {
       currentDropItem.before(currentItem);
     }
 
-    window.localStorage.setItem("categorys", [...e.target.parentElement.children]);
+    // window.localStorage.getItem("categorys");
+    // console.log([...e.target.parentElement.children][0].innerText);
+    const storeList = [];
+    {
+      [...e.target.parentElement.children].map(({ innerText }) => storeList.push(innerText));
+    }
+
+    window.localStorage.setItem("categorys", storeList);
   });
 }
