@@ -1,17 +1,12 @@
+import { data } from "../components/data";
+
 export function MyCategory() {
   document.querySelector("#app").innerHTML = `
 <header class="header mobile">🌷 WEB TO DO MATE 🌷</header>
 <main class="main mobile">
   <section class="calendar">
-    <ul class="calendar__column--flex" id="categorys">
-      <li class="calendar__column--flex__header" draggable="true">SOPT</li>
-      <li class="calendar__column--flex__header" draggable="true">CAU</li>
-      <li class="calendar__column--flex__header" draggable="true">ROUTINE</li>
-      <li class="calendar__column--flex__header" draggable="true">ETC</li>
-      <li class="calendar__column--flex__header" draggable="true">FRIENDS</li>
-      <li class="calendar__column--flex__header" draggable="true">CLEAN</li>
-      <li class="calendar__column--flex__header" draggable="true">MEETING</li>
-      <li class="calendar__column--flex__header" draggable="true">PLAY</li>
+    <ul class="calendar__column--flex">
+     
     </ul>
   </section>
   <section class="lists"></section>
@@ -31,6 +26,15 @@ export function MyCategory() {
 </a>
 </footer>
 `;
+
+  {
+    data.categorys.map(
+      ({ id, category }) =>
+        (document.querySelector("ul.calendar__column--flex").innerHTML += `
+    <li class="calendar__column--flex__header" draggable="true">${category}</li>
+    `),
+    );
+  }
 
   const list = document.querySelector(".calendar__column--flex");
 
