@@ -14,14 +14,14 @@ export function Home() {
 </section>
 </main>
 <footer class="footer mobile">
-<a href="#/">
-  <button type="button" class="footer__button" data-navigate="#/" id="home">
+<a href="/">
+  <button type="button" class="footer__button" data-navigate="/" id="home">
     <i><img src="assets/icon/homeIc.svg" alt="달력 아이콘" /></i>
     <p>달력</p>
   </button>
 </a>
-<a href="#/mycategory">
-  <button type="button" class="footer__button" data-navigate="#/mycategory" id="mycategory">
+<a href="/mycategory">
+  <button type="button" class="footer__button" data-navigate="/mycategory" id="mycategory">
     <i><img src="assets/icon/personIc.svg" alt="사람 아이콘" /></i>
     <p>MY</p>
   </button>
